@@ -1,0 +1,486 @@
+.banner
+    &.contact-banner
+        &::before
+            background: linear-gradient(270deg, rgba(254, 254, 254, 0) 25%, rgb(0 0 0 / 62%) 100%)
+            @include respond-to(screen-520)
+                background: linear-gradient(270deg, rgba(254, 254, 254, 0) -92%, rgb(0 0 0 / 58%) 100%)
+        .banner-wrapper
+            .content
+                p
+                    padding-top: 12px
+                    max-width: 320px
+                    line-height: 1.25
+.contact-secA
+    padding: 85px 0
+    background: $primary url(../images/backgrounds/chair-white-fade.png) no-repeat
+    background-position: 100% 80%
+    @include respond-to(screen-1366)
+        padding: 70px 0
+    @include respond-to(screen-1024)
+        padding: 55px 0
+        background-position: 100% 100%
+        background-size: 25%
+    @include respond-to(screen-767)
+        padding: 45px 0
+    .heading
+        padding-bottom: 45px
+        @include respond-to(screen-991)
+            padding-bottom: 35px
+        h3
+            color: $White
+            font-family: $PoppinsSB
+    .sec-content
+        .grid
+            grid-template-columns: repeat(2, max-content)
+            grid-gap: 0 8rem
+            justify-content: flex-start
+            @include respond-to(screen-767)
+                grid-template-columns: repeat(2, 1fr)
+                grid-gap: 0 2rem
+            @include respond-to(screen-520)
+                grid-template-columns: 100%
+                grid-gap: 20px
+            .col
+                h4,p,a
+                    color: $White
+                h4
+                    @include respond-to(screen-520)
+                        font-size: 22px
+                p
+                    line-height: 1.4
+                    max-width: 274px
+                    margin: 10px 0 25px
+                    @include respond-to(screen-991)
+                        margin: 10px 0 20px
+                    @include respond-to(screen-520)
+                        margin: 20px 0 10px
+                a
+                    display: flex
+                    align-items: center
+                    gap: 0 12px
+                    &:hover
+                        img
+                            transform: translateX(12px)
+    .contct-btns
+        padding-top: 80px
+        @include respond-to(screen-1024)
+            padding-top: 40px
+        .flex
+            gap: 0 20px
+            @include respond-to(screen-991)
+                gap: 0
+                justify-content: space-between
+            @include respond-to(screen-520)
+                gap: 15px 0
+            .btns
+                flex: 0 1 25%
+                max-width: 25%
+                width: 100%
+                @include respond-to(screen-1024)
+                    flex: 0 1 28%
+                    max-width: 28%
+                @include respond-to(screen-991)
+                    flex: 0 1 33%
+                    max-width: 33%
+                @include respond-to(screen-520)
+                    flex: 0 1 49%
+                    max-width: 49%
+                a
+                    display: flex
+                    align-items: flex-start
+                    gap: 0 20px
+                    background: $White
+                    padding: 20px 28px
+                    border-radius: 8px
+                    @include respond-to(screen-991)
+                        padding: 18px 14px
+                        gap: 0 12px
+                    img
+                        @include respond-to(screen-767)
+                            width: 20px
+                        @include respond-to(screen-540)
+                            display: none
+                    .md-col
+                        p
+                            font-family: $PoppinsSB
+                        p,span
+                            line-height: 1
+                            @include respond-to(screen-767)
+                                font-size: 14px
+                        span
+                            display: block
+                            margin-top: 4px
+                    &:hover
+                        background: $Black
+                        color: $White
+                        img
+                            filter: invert(1)
+.contact-secB
+    padding: 70px 0
+    background: #ececec
+    @include respond-to(screen-1024)
+        padding: 55px 0
+    @include respond-to(screen-767)
+        padding: 45px 0
+    .heading
+        margin-bottom: 50px
+        @include respond-to(screen-675)
+            margin-bottom: 35px
+    .map-sec
+        .map_wrap
+            position: relative
+            max-width: fit-content
+            margin: 0 auto
+            .map_pointer
+                position: absolute
+                left: 0
+                right: 0
+                top: 0
+                bottom: 0
+                z-index: 1
+            .Mappointer
+                position: absolute
+                top: 30%
+                .btn_mp
+                    display: block
+                    width: 8px
+                    height: 8px
+                    background: $primary
+                    border-radius: 50%
+                    outline: 1px solid $primary
+                    outline-offset: 2px
+                    cursor: pointer
+                    position: relative
+                    @include respond-to(screen-675)
+                        width: 10px
+                        height: 10px
+                    @include respond-to(screen-540)
+                        width: 5px
+                        height: 5px
+                        outline-offset: 1px
+                    &::before
+                        width: 20px
+                        height: 20px
+                        top: 50%
+                        right: 0
+                        bottom: 0
+                        left: 50%
+                        position: absolute
+                        content: ""
+                        z-index: -1
+                        transform: translateX(-50%) translateY(-50%)
+                        background: $primary
+                        border-radius: 50%
+                        display: block
+                        animation: pulse-border 1500ms ease-out infinite
+                        @keyframes pulse-border
+                            0%
+                                transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1)
+                                opacity: 0.5
+                            100%
+                                transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5)
+                                opacity: 0
+                        @include respond-to(screen-540)
+                            width: 15px
+                            height: 15px
+                .map_con
+                    bottom: 100%
+                    left: 50%
+                    translate: -50% 0
+                    margin-bottom: 15px
+                    width: 200px
+                    background: $White
+                    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px
+                    position: absolute
+                    padding: 20px
+                    border-radius: 10px
+                    z-index: 1
+                    @include respond-to(screen-675)
+                        padding: 15px
+                    @include respond-to(screen-675)
+                        width: 160px
+                    &::after
+                        content: ""
+                        position: absolute
+                        top: 100%
+                        left: 50%
+                        translate: -50% 0%
+                        width: 0
+                        height: 0
+                        border-left: 10px solid transparent
+                        border-right: 10px solid transparent
+                        border-top: 9px solid #fff
+                    .content
+                        pointer-events: none
+                        .place-name
+                            font-family: $PoppinsSB
+                            text-transform: uppercase
+                            padding-bottom: 5px
+                            margin-bottom: 5px
+                            border-bottom: 1px solid #cfcfcf
+                            @include respond-to(screen-675)
+                                font-size: 14px
+                        ul
+                            li
+                                font-size: 14px
+                                color: $text
+                    .clos
+                        color: $primary
+                        position: absolute
+                        top: 10px
+                        line-height: 1
+                        right: 10px
+                        cursor: pointer
+                        font-size: 13px
+                        z-index: 1
+                        font-family: cursive
+                        @include respond-to(screen-675)
+                            font-size: 11px
+                &.a_1
+                    top: 30%
+                    left: 33%
+                &.a_2
+                    top: 36%
+                    right: 51%
+                &.a_3
+                    top: 43%
+                    left: 36%
+                &.a_4
+                    top: 38%
+                    left: 62%
+                &.a_5
+                    top: 25%
+                    left: 39%
+                &.a_6
+                    top: 29%
+                    right: 46%
+                &.a_7
+                    top: 45%
+                    right: 39%
+                &.a_8
+                    top: 47%
+                    right: 29%
+                &.a_9
+                    top: 34%
+                    right: 13%
+                    .map_con
+                        @include respond-to(screen-675)
+                            left: -33px
+                        &::after
+                            @include respond-to(screen-675)
+                                left: 72%
+                &.a_10
+                    top: 69%
+                    right: 63%
+                &.a_11
+                    top: 88%
+                    left: 34%
+                &.a_12
+                    top: 35%
+                    left: 20%
+                &.a_13
+                    top: 49%
+                    left: 10%
+                    .map_con
+                        @include respond-to(screen-675)
+                            left: 45px
+                        &::after
+                            @include respond-to(screen-675)
+                                left: 23%
+                &.a_14
+                    top: 59%
+                    left: 25%
+                &.a_15
+                    top: 76%
+                    left: 26%
+                &.a_16
+                    top: 86%
+                    left: 28%
+.contact-secC
+    padding: 70px 0
+    @include respond-to(screen-1366)
+        padding: 60px 0
+    @include respond-to(screen-991)
+        padding: 40px 0
+    .heading
+        margin-bottom: 50px
+        @include respond-to(screen-991)
+            margin-bottom: 35px
+    .secc-cont
+        .flex
+            justify-content: space-between
+            .colA,.colB
+                flex: 0 1 48%
+                max-width: 48%
+            .colA
+                @include respond-to(screen-991)
+                    display: none
+            .colB
+                @include respond-to(screen-991)
+                    flex: 0 1 100%
+                    max-width: 100%
+            figure
+                img
+                    width: 100%
+            .colB
+                .ftstxt
+                    font-family: $PoppinsSB
+                .radio-btns
+                    padding: 20px 0
+                    display: grid
+                    grid-template-columns: repeat(4,1fr)
+                    grid-gap: 0 20px
+                    @include respond-to(screen-1140)
+                        padding: 15px 0
+                        gap: 0 10px
+                    @include respond-to(screen-520)
+                        grid-template-columns: repeat(2,1fr)
+                        gap: 10px
+                    .col
+                        position: relative
+                        .card
+                            border: 1px solid #a6a6a6
+                            border-radius: 10px
+                            text-align: center
+                            padding: 14px 0
+                        input
+                            appearance: none
+                            position: absolute
+                            top: 0
+                            left: 0
+                            right: 0
+                            bottom: 0
+                            cursor: pointer
+                            &:checked + .card
+                                background: $primary
+                                border-color: $primary
+                                p
+                                    color: $White
+                                span
+                                    border-color: $White
+                                    &::before
+                                        opacity: 1
+                        span
+                            display: block
+                            height: 18px
+                            width: 18px
+                            border-radius: 50%
+                            border: 1px solid $primary
+                            position: relative
+                            margin: 0 auto
+                            &::before
+                                content: ""
+                                position: absolute
+                                left: 50%
+                                top: 50%
+                                translate: -50% -50%
+                                height: 11px
+                                width: 11px
+                                border-radius: 50%
+                                background: $White
+                                opacity: 0
+                        p
+                            font-size: 14px
+                            line-height: 16px
+                            color: $text
+                            max-width: 95px
+                            margin: 0 auto
+                            padding-top: 10px
+                .form
+                    .col
+                        display: flex
+                        flex-wrap: wrap
+                        justify-content: space-between
+                        .form-group
+                            position: relative
+                            flex: 0 1 48%
+                            max-width: 48%
+                            width: 100%
+                            margin-bottom: 18px
+                            @include respond-to(screen-1366)
+                                flex: 0 1 49%
+                                max-width: 49%
+                            @include respond-to(screen-1140)
+                                margin-bottom: 12px
+                            @include respond-to(screen-520)
+                                flex: 0 1 100%
+                                max-width: 100%
+                            &.flex100
+                                flex: 0 1 100%
+                                max-width: 100%
+                                width: 100%
+                        select
+                            height: auto
+                            padding: 9px !important
+                        input
+                            width: 100%
+                            font-family: inherit
+                            border: none
+                            font-size: 14px
+                            line-height: 1.1
+                            border-radius: 30px
+                            background: $White
+                            color: $Black
+                            padding: 13px 12px
+                            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px
+                            border: 1px solid #a6a6a6
+                            &:focus
+                                outline: none
+                            option
+                                padding: 10px
+                                &:nth-child(odd)
+                                    background: #f5f5f5
+                        label
+                            font-size: 14px
+                            position: absolute
+                            left: 15px
+                            top: 50%
+                            translate: 0 -50%
+                            pointer-events: none
+                            transition: .5s ease
+                            line-height: 1
+                            color: $text
+                            background: $White
+                            &.valid
+                                top: 1px
+                                font-size: 12px
+                        textarea
+                            width: 100%
+                            resize: none
+                            border: none
+                            border-radius: 20px
+                            padding: 20px
+                            min-height: 135px
+                            color: $Black
+                            font-family: inherit
+                            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px
+                            border: 1px solid #a6a6a6
+                            @include respond-to(screen-1152)
+                                min-height: 100px
+                            &:focus
+                                outline: none
+                            &::placeholder
+                                color: $text
+                                font-family: inherit
+                            &::-webkit-scrollbar
+                                width: 2px
+                                background: none
+                            &::-webkit-scrollbar-track
+                                box-shadow: none
+                            &::-webkit-scrollbar-thumb
+                                background-color: $Black
+                                outline: 0
+                    .sbmt-btn
+                        text-align: center
+                        margin-top: 15px
+                        a,button,input
+                            display: inline-block
+                            padding: 7px 55px
+                            background: $primary
+                            font-family: $PoppinsM
+                            letter-spacing: 1px
+                            color: $White
+                            border-radius: 15px
+                            text-transform: uppercase
+                            &:hover
+                                background: $Black

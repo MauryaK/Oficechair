@@ -1,0 +1,121 @@
+.banner
+    &.blog-listing-banner
+        &::before
+            background: linear-gradient(180deg, rgba(254, 254, 254, 0) 25%, rgba(0, 0, 0, 0.62) 100%)
+        .banner-wrapper
+            top: auto
+            bottom: 20%
+            .content
+                h1
+                    padding-bottom: 40px
+                .custom-select
+                    max-width: 345px
+                    margin: 0 auto
+                    border: none
+                    border-bottom: solid 1px #e8e8e8
+                    box-sizing: border-box
+                    clear: both
+                    cursor: pointer
+                    display: block
+                    font-family: inherit
+                    font-size: 14px
+                    font-weight: normal
+                    height: 42px
+                    line-height: 40px
+                    outline: none
+                    position: relative
+                    transition: all 0.2s ease-in-out
+                    user-select: none
+                    white-space: nowrap
+                    .current
+                        display: flex
+                        align-items: center
+                        justify-content: space-between
+                        color: $White
+                        em
+                            font-style: inherit
+                    .list
+                        text-align: left
+                        background-color: #fff
+                        border-radius: 5px
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
+                        box-sizing: border-box
+                        margin-top: 4px
+                        opacity: 0
+                        overflow: hidden
+                        padding: 0
+                        pointer-events: none
+                        position: absolute
+                        top: 100%
+                        left: 0
+                        right: 0
+                        transform-origin: 50% 0
+                        transform: scale(0.75) translateY(-21px)
+                        transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out
+                        z-index: 7
+                        max-height: 180px
+                        overflow-y: auto
+                        &::-webkit-scrollbar
+                            width: 2px
+                            background: none
+                        &::-webkit-scrollbar-track
+                            box-shadow: none
+                        &::-webkit-scrollbar-thumb
+                            background-color: $Black
+                            outline: 0
+                        li
+                            padding: 0 20px
+                            line-height: 35px
+                            font-family: $PoppinsM
+                            &.selected
+                                background: #e2e2e2
+                            &:hover
+                                background: $primary
+                                color: $White
+                    &.open
+                        .list
+                            opacity: 1
+                            pointer-events: auto
+                            transform: scale(1) translateY(0)
+.blog-listing-secA
+    padding: 25px 0 50px
+    position: relative
+    z-index: 0
+    @include respond-to(screen-767)
+        padding: 15px 0 50px
+    .blog-listing-wrapper
+        padding: 0 25px
+        @include respond-to(screen-991)
+            padding: 0 20px
+        @include respond-to(screen-767)
+            padding: 0 15px
+        .grid
+            grid-template-columns: repeat(3,1fr)
+            grid-gap: 15px
+            @include respond-to(screen-1024)
+                grid-template-columns: repeat(2,1fr)
+            @include respond-to(screen-767)
+                grid-template-columns: 100%
+            .item
+                &::before
+                    background: linear-gradient(0deg, rgb(0 0 0 / 55%) 22%, rgba(255, 255, 255, 0) 50%)
+                figure
+                    overflow: hidden
+                    img
+                        width: 100%
+                .blog-title
+                    padding: 30px 35px
+                    @include respond-to(screen-991)
+                        padding: 22px 24px
+                    @include respond-to(screen-767)
+                        padding: 20px 22px
+                    h6
+                        color: $White
+                        transition: .5s ease
+                &:hover
+                    figure
+                        img
+                            transform: scale(1.05)
+        .blog-load-more-btn
+            margin-top: 40px
+            text-align: center

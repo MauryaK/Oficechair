@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "place": "Delhi NCR",
+        "location": "New Delhi,Gurugram,Faridabad,Noida,Gaziabad"
+    },
+    {
+        "id": 2,
+        "place": "Uttar Pradesh",
+        "location": "Lucknow,Kanpur,Agra,Mathura,Bulandshahr"
+    },
+    {
+        "id": 3,
+        "place": "Madhya Pradesh",
+        "location": "Rewa"
+    },
+    {
+        "id": 4,
+        "place": "Bihar",
+        "location": "Patna,Siwan,Motihri,Kishnaganj"
+    },
+    {
+        "id": 5,
+        "place": "Uttarakhand",
+        "location": "Dehradoon"
+    },
+    {
+        "id": 6,
+        "place": "Nepal",
+        "location": "Kathmandu"
+    },
+    {
+        "id": 7,
+        "place": "Jharkhand",
+        "location": "Ranchi"
+    },
+    {
+        "id": 8,
+        "place": "West Bengal",
+        "location": "Kolkata"
+    },
+    {
+        "id": 9,
+        "place": "Assam",
+        "location": "Guhwati"
+    },
+    {
+        "id": 10,
+        "place": "Telangana",
+        "location": "Hyderabad"
+    },
+    {
+        "id": 11,
+        "place": "Tamil Nadu",
+        "location": "Chennai"
+    },
+    {
+        "id": 12,
+        "place": "Rajastan",
+        "location": "Jaipur"
+    },
+    {
+        "id": 13,
+        "place": "Gujrat",
+        "location": "Vadodara,Ahmedabad"
+    },
+    {
+        "id": 14,
+        "place": "Maharashtra",
+        "location": "Mumbai,Pune"
+    },
+    {
+        "id": 15,
+        "place": "Karnataka",
+        "location": "Bangalore"
+    },
+    {
+        "id": 16,
+        "place": "Kerala",
+        "location": "Kochi"
+    }
+]

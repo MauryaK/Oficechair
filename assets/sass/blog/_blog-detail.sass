@@ -1,0 +1,225 @@
+.blog-detail-secA
+    padding: 65px 0
+    @include respond-to(screen-1366)
+        padding: 45px 0
+    @include respond-to(screen-1024)
+        padding: 35px 0
+    .flex
+        justify-content: space-between
+        align-items: center
+        @include respond-to(screen-767)
+            gap: 20px 0
+        span
+            font-size: 14px
+            line-height: 1
+            color: $text
+        .colA
+            flex: 0 1 40%
+            max-width: 40%
+            width: 100%
+            @include respond-to(screen-767)
+                flex: 0 1 100%
+                max-width: 100%
+            h1
+                font-size: 36px
+                font-family: $Poppins
+                padding-top: 12px
+                @include respond-to(screen-1366)
+                    font-size: 32px
+                @include respond-to(screen-1024)
+                    font-size: 28px
+                @include respond-to(screen-991)
+                    font-size: 26px
+                @include respond-to(screen-767)
+                    font-size: 22px
+        .colB
+            flex: 0 1 auto
+            span
+                font-family: $PoppinsM
+                padding-right: 20px
+            .social-links
+                display: flex
+                align-items: center
+                ul
+                    li
+                        display: inline-block
+                        line-height: 1
+                        vertical-align: middle
+                        &:not(:first-child)
+                            margin-left: 6px
+                    a
+                        display: flex
+                        height: 35px
+                        width: 35px
+                        border-radius: 50%
+                        border: 1px solid $Black
+                        align-items: center
+                        justify-content: center
+                        transition: .3s ease-out
+                        svg
+                            height: 20px
+                            width: 20px
+                            fill: $Black
+                            transition: .3s ease-out
+                        &:hover
+                            background: $primary
+                            border-color: $primary
+                            svg
+                                fill: $White
+.blog-detail-secB
+    padding: 55px 0
+    background: #fff url(../images/backgrounds/chair-light-grey.png) no-repeat
+    background-position: 100% 75%
+    @include respond-to(screen-1140)
+        background-size: 20%
+    @include respond-to(screen-1024)
+        padding: 45px 0 20px
+    @include respond-to(screen-675)
+        padding: 25px 0 10px
+    .flex
+        justify-content: space-between
+        .colA
+            flex: 0 1 65%
+            max-width: 65%
+            width: 100%
+            @include respond-to(screen-1140)
+                flex: 0 1 68%
+                max-width: 68%
+            @include respond-to(screen-991)
+                flex: 0 1 66%
+                max-width: 66%
+            @include respond-to(screen-767)
+                flex: 0 1 100%
+                max-width: 100%
+            .content
+                h2,h3,h4,h5
+                    margin-bottom: 20px
+                h3
+                    font-size: 24px
+                    @include respond-to(screen-767)
+                        font-size: 20px
+                h4
+                    font-size: 24px
+                    font-family: $PoppinsSB
+                    @include respond-to(screen-991)
+                        font-size: 22px
+                    @include respond-to(screen-767)
+                        font-size: 18px
+                p
+                    color: $text
+                    margin-bottom: 25px
+                    text-align: justify
+                    @include respond-to(screen-520)
+                        font-size: 15px
+                        line-height: 1.5
+                    @include respond-to(screen-365)
+                        font-size: 14px
+                        line-height: 1.5
+                ul
+                    padding-left: 20px
+                    margin-bottom: 25px
+                    li
+                        list-style: disc
+                        color: $text
+                        @include respond-to(screen-365)
+                            font-size: 14px
+                            line-height: 1.5
+                        &::marker
+                            color: $primary
+                            font-size: 20px
+        .colB
+            flex: 0 1 27%
+            max-width: 27%
+            width: 100%
+            @include respond-to(screen-991)
+                flex: 0 1 30%
+                max-width: 30%
+                width: 100%
+            @include respond-to(screen-767)
+                display: none
+            .col-md
+                h5
+                    font-family: $PoppinsM
+                    font-size: 24px
+                    line-height: 1
+                    border-bottom: 1px solid $primary
+                    padding-bottom: 20px
+                    @include respond-to(screen-991)
+                        font-size: 20px
+                        padding-bottom: 15px
+                &.categories-md
+                    position: sticky
+                    top: calc( $headerheight + 25px )
+                    @include respond-to(screen-991)
+                        top: 90px
+                    ul
+                        margin: 25px 0 70px
+                        @include respond-to(screen-991)
+                            margin: 15px 0 35px
+                        li
+                            a
+                                color: $text
+                                font-size: 16px
+                                font-family: $PoppinsM
+                                @include respond-to(screen-991)
+                                    font-size: 16px
+                                &:hover
+                                    color: $primary
+                            &:not(:last-child)
+                                margin-bottom: 15px
+                                @include respond-to(screen-991)
+                                    margin-bottom: 8px
+.blog-detail-secC
+    padding: 15px 0 55px
+    @include respond-to(screen-520)
+        padding: 15px 0 30px
+    .heading
+        margin-bottom: 50px
+        @include respond-to(screen-675)
+            margin-bottom: 35px
+    .more-blogs-slider
+        @include respond-to(screen-1280)
+            padding: 0 30px
+        @include respond-to(screen-767)
+            padding: 0
+        .item
+            &::before
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0) 41%, rgb(0 0 0 / 78%) 93%)
+            figure
+                img
+                    aspect-ratio: 1.097
+                    object-fit: cover
+            .blog-title
+                padding: 0 25px 45px
+                @include respond-to(screen-1024)
+                    padding: 0 20px 15px
+                @include respond-to(screen-767)
+                    padding: 0 20px 25px
+                p
+                    color: $White
+                    line-height: 1.3
+            &:hover
+                figure
+                    img
+                        transform: scale(1.05)
+        .owl-nav
+            button.owl-prev,.owl-next
+                position: absolute
+                top: 50%
+                translate: 0 -50%
+                img
+                    width: 15px
+                    @include respond-to(screen-1366)
+                        width: 12px
+            .owl-prev
+                left: -40px
+                @include respond-to(screen-1366)
+                    left: -30px
+                @include respond-to(screen-1280)
+                    left: 0
+            .owl-next
+                right: -40px
+                @include respond-to(screen-1366)
+                    right: -30px
+                @include respond-to(screen-1280)
+                    right: 0

@@ -1,0 +1,156 @@
+.banner
+    &.download-banner
+        .banner-wrapper
+            translate: 0 -50%
+            top: 62%
+            .flex
+                align-items: center
+                justify-content: space-between
+                padding: 0 8rem
+                @include respond-to(screen-1230)
+                    padding: 0 4rem
+                @include respond-to(screen-1024)
+                    padding: 0 2rem
+                @include respond-to(screen-767)
+                    padding: 0
+            .content
+                padding-left: 0
+                h1
+                    font-size: 48px
+                    @include respond-to(screen-991)
+                        font-size: 38px
+                    @include respond-to(screen-767)
+                        font-size: 32px
+                p
+                    padding-top: 20px
+                    max-width: 400px
+                    opacity: .6
+                    line-height: 22px
+            .broch
+                cursor: pointer
+                @include respond-to(screen-1230)
+                    flex: 0 1 33%
+                @include respond-to(screen-1024)
+                    padding-right: 20px
+                @include respond-to(screen-767)
+                    display: none
+            .clic
+                filter: invert(1)
+                margin-right: -35px
+                margin-left: auto
+                margin-bottom: -33px
+.download-tab
+    position: sticky
+    top: $headerheight
+    background: #f4f4f4
+    z-index: 2
+    @include respond-to(screen-1024)
+        top: 57.63px
+    ul
+        @include respond-to(screen-767)
+            width: 100%
+            white-space: nowrap
+            overflow-x: auto
+        li
+            position: relative
+            padding: 12px 0
+            font-family: $PoppinsM
+            color: $text
+            &::before
+                content: ""
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 0
+                height: 2px
+                background: $primary
+                transition: .5s ease
+            &.active
+                color: $primary
+                &::before
+                    width: 100%
+            &:not(:first-child)
+                margin-left: 5rem
+                @include respond-to(screen-991)
+                    margin-left: 30px
+.download-secA
+    padding: 45px 0
+    @include respond-to(screen-1024)
+        padding: 35px 0
+    @include respond-to(screen-767)
+        padding: 25px 0
+    .download-wrap
+        padding: 0 8rem
+        @include respond-to(screen-1536)
+            padding: 0 4rem
+        @include respond-to(screen-1024)
+            padding: 0 2rem
+        @include respond-to(screen-767)
+            padding: 0 15px
+        .download-tab-content
+            .tabs
+                transform: translateY(20px)
+                &.active
+                    transform: translateY(0px)
+                .grid
+                    grid-template-columns: repeat(3,1fr)
+                    grid-gap: 30px 35px
+                    @include respond-to(screen-1366)
+                        grid-gap: 25px
+                    @include respond-to(screen-1024)
+                        grid-gap: 20px
+                    @include respond-to(screen-991)
+                        grid-template-columns: repeat(2,1fr)
+                    @include respond-to(screen-767)
+                        grid-template-columns: 100%
+                        grid-gap: 15px
+                    .col
+                        background: #e5e5e5 url(../images/backgrounds/chair-small-2.png) no-repeat
+                        background-position: 110% 100%
+                        padding: 25px
+                        position: relative
+                        @include respond-to(screen-1024)
+                            padding: 20px
+                        .col-md-1
+                            display: flex
+                            align-items: flex-end
+                            position: relative
+                            justify-content: space-between
+                        .brocher-link
+                            position: absolute
+                            top: 0
+                            left: 0
+                            right: 0
+                            bottom: 0
+                            z-index: 2
+                            &:hover + .col-md-1
+                                .download
+                                    animation: 1s infinite alternate action
+                        .broch
+                            transition: .8s ease
+                            .broc
+                                width: 100%
+                            .clic
+                                margin-bottom: -35px
+                                transform: translate(32px, 0px)
+                                @include respond-to(screen-1230)
+                                    margin-bottom: -23px
+                                @include respond-to(screen-1024)
+                                    margin-bottom: -20px
+                        h5
+                            transition: .8s ease
+                            max-width: 200px
+                            line-height: 24px
+                            border-top: 2px solid $primary
+                            padding-top: 18px
+                            @include respond-to(screen-1366)
+                                max-width: 185px
+                                margin-left: 25px
+                        .download
+                            position: absolute
+                            top: 0
+                            right: 0
+                            padding-top: 10px
+                            @include respond-to(screen-1024)
+                                padding-top: 0px
+                                width: 17px

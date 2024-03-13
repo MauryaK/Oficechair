@@ -1,0 +1,228 @@
+footer
+    background: url(../images/backgrounds/chair.png) no-repeat, linear-gradient(270deg, rgb(118, 118, 118) 21%, rgb(3, 3, 4) 100%)
+    background-position: bottom right
+    padding: 20px 0 0
+    .footer-wrapper
+        padding: 0 60px
+        @include respond-to(screen-1280)
+            padding: 0 25px
+        @include respond-to(screen-1024)
+            padding: 0 15px
+        @include respond-to(screen-767)
+            padding: 0
+        @include respond-to(screen-675)
+            padding: 0
+    .upper-footer
+        border-bottom: 1px solid #ffffff7a
+        padding: 10px 0
+        @include respond-to(screen-860)
+            padding-top: 0
+        @include respond-to(screen-767)
+            position: relative
+        .flex
+            @include respond-to(screen-860)
+                gap: 18px 0
+            .colA
+                @include respond-to(screen-860)
+                    margin: auto
+                @include respond-to(screen-767)
+                    margin-right: auto
+                    margin-left: 0
+                @include respond-to(screen-365)
+                    max-width: 120px
+            .colB
+                display: flex
+                align-items: center
+                flex: 1 1
+                justify-content: flex-end
+                gap: 0 25px
+                @include respond-to(screen-860)
+                    flex: 0 1 100%
+                    justify-content: space-between
+                    gap: 0 5px
+                .google-reviews
+                    border-right: 1px solid rgb(255 255 255 / 25%)
+                    padding: 10px 0
+                    padding-right: 20px
+                    @include respond-to(screen-520)
+                        padding-right: 30px
+                    @include respond-to(screen-420)
+                        padding-right: 0
+                        border-right: none
+                    a
+                        display: flex
+                        align-items: center
+                        gap: 0 14px
+                        span
+                            font-size: 14px
+                            color: $White
+                            @include respond-to(screen-365)
+                                font-size: 12px
+                        ul
+                            @include respond-to(screen-767)
+                                display: none
+                            li
+                                display: inline-block
+                                vertical-align: middle
+                                &:not(:first-child)
+                                    margin-left: 2px
+                .social-links
+                    ul
+                        li
+                            display: inline-block
+                            &:last-child
+                                @include respond-to(screen-365)
+                                    display: none
+                            &:not(:first-child)
+                                margin-left: 12px
+                                @include respond-to(screen-520)
+                                    margin-left: 10px
+                            a
+                                display: block
+                                height: 25px
+                                width: 25px
+                                @include respond-to(screen-860)
+                                    height: 22px
+                                    width: 22px
+                                @include respond-to(screen-520)
+                                    height: 20px
+                                    width: 20px
+                                svg
+                                    height: 100%
+                                    width: 100%
+                                    fill: $White
+                                    transition: .5s ease
+                                &:hover
+                                    svg
+                                        fill: $primary
+                .ftr-btns
+                    display: flex
+                    align-items: center
+                    @include respond-to(screen-767)
+                        position: absolute
+                        top: 9px
+                        right: 0
+                    @include respond-to(screen-365)
+                        top: 4px
+                    .btn
+                        a
+                            display: block
+                            padding: 7px 20px
+                            border-radius: 30px
+                            font-size: 14px
+                            font-family: $PoppinsSB
+                            @include respond-to(screen-365)
+                                padding: 6px 19px
+                        &.reqst
+                            margin-left: 15px
+                            a
+                                background: $primary
+                                color: $White
+                                &:hover
+                                    background: $White
+                                    color: $Black
+    .middle-footer
+        padding: 30px 0
+        border-bottom: 1px solid #ffffff7a
+        .grid
+            grid-template-columns: repeat(6, max-content)
+            justify-content: space-between
+            @include respond-to(screen-1024)
+                grid-template-columns: repeat(3, max-content)
+                gap: 25px 0
+            @include respond-to(screen-767)
+                grid-template-columns: repeat(2, 1fr)
+                gap: 25px 20px
+            .col
+                h4
+                    font-size: 17px
+                    line-height: 1.2
+                    margin-bottom: 10px
+                    color: $White
+                a
+                    font-size: 14px
+                    line-height: 18px
+                    opacity: .8
+                    color: $White
+                .qr-img
+                    margin-top: 20px
+    .bottom-footer
+        padding: 30px 0
+        @include respond-to(screen-767)
+            padding: 15px 0
+        .flex
+            justify-content: space-between
+            @include respond-to(screen-767)
+                justify-content: center
+                text-align: center
+                gap: 10px
+        a,p
+            color: $White
+            font-size: 14px
+            line-height: 1.2
+            @include respond-to(screen-860)
+                font-size: 12px
+        .colA
+            @include respond-to(screen-767)
+                width: 100%
+        nav
+            @include respond-to(screen-365)
+                border-bottom: 1px solid #ffffff7a
+                padding-bottom: 15px
+            ul
+                @include respond-to(screen-365)
+                    display: grid
+                    grid-template-columns: repeat(3, 1fr)
+                    justify-content: space-between
+                li
+                    display: inline-block
+                    &:not(:first-child)
+                        margin-left: 12px
+                        @include respond-to(screen-860)
+                            margin-left: 8px
+                        @include respond-to(screen-420)
+                            margin-left: 6px
+                        @include respond-to(screen-365)
+                            margin-left: 0
+        .colB
+            display: flex
+            align-items: center
+            @include respond-to(screen-365)
+                flex-direction: column
+                gap: 7px
+                padding-top: 15px
+            a
+                display: flex
+                align-items: center
+                gap: 0 12px
+
+.footer-strip
+    display: none
+    @include respond-to(screen-675)
+        display: block
+        position: fixed
+        bottom: 0
+        left: 0
+        right: 0
+        z-index: 2
+        background: $primary
+    ul
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        align-items: center
+        li
+            text-align: center
+            line-height: 1
+            &:not(:last-child)
+                padding: 10px 0
+                border-right: 1px solid $White
+            a
+                font-size: 16px
+                line-height: 1
+                display: inline-flex
+                align-items: center
+                gap: 0 12px
+                color: $White
+                img
+                    filter: invert(1)
+                    width: 17px

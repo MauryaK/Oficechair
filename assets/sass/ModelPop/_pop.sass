@@ -1,0 +1,862 @@
+.Hamburger_menu
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    height: 100%
+    transform: translateX(-100%)
+    z-index: 9
+    transition: .5s ease
+    transition-delay: 0s
+    &.is-open
+        transform: translateX(0%)
+        transition-delay: .1s
+    .model-body
+        position: relative
+        width: 420px
+        background: #fff url(../images/backgrounds/chair-light-grey.png) no-repeat
+        background-position: bottom right
+        background-size: 60%
+        height: 100%
+        padding: 45px 35px 0
+        padding-right: 0
+        @include respond-to(screen-767)
+            width: 100vw
+            padding: 85px 25px 0
+            padding-right: 0
+        .close_model
+            position: absolute
+            right: 0
+            top: 0
+            padding: 25px
+            cursor: pointer
+    .model-body-wrap
+        height: 100%
+        padding-right: 25px
+        overflow-y: auto
+        &::-webkit-scrollbar
+            width: 2px
+            background: none
+        &::-webkit-scrollbar-track
+            box-shadow: none
+        &::-webkit-scrollbar-thumb
+            background-color: #f5f5f5
+            outline: 0
+    .Navigation-list
+        .nav-model
+            ul
+                li
+                    display: block
+                    a
+                        font-size: 22px
+                        line-height: 1.2
+                        font-family: $PoppinsM
+                    &.prdct-mn
+                        position: relative
+                        transition: .5s ease
+                        .ttl-prd
+                            display: flex
+                            align-items: center
+                            justify-content: space-between
+                            .plu-ico
+                                cursor: pointer
+                                width: 16px
+                                height: 18px
+                                position: relative
+                                span
+                                    display: block
+                                    height: 1px
+                                    width: 100%
+                                    background: $Black
+                                    position: absolute
+                                    top: 50%
+                                    translate: 0 -50%
+                                    transition: .2s ease
+                                    &::before
+                                        content: ""
+                                        position: absolute
+                                        rotate: 90deg
+                                        height: inherit
+                                        width: inherit
+                                        background: inherit
+                                &.active
+                                    span
+                                        &::before
+                                            opacity: 0
+                        .product-menu
+                            padding: 5px 0
+                            ul
+                                li
+                                    &:not(:last-child)
+                                        margin-bottom: 4px
+                                    a
+                                        color: #000000a3
+                                        font-size: 17px
+                                        line-height: 1.2
+                                        padding: 3px 0
+                                        &:hover
+                                            color: $Black
+                                    &.sub-cateprd
+                                        .sub-cat-ttl
+                                            display: flex
+                                            align-items: center
+                                            justify-content: space-between
+                                            .arrow
+                                                cursor: pointer
+                                        .sub-cat-menu
+                                            margin: 12px 0
+                                            padding: 15px 0
+                                            border-top: 1px solid #66666633
+                                            border-bottom: 1px solid #66666633
+                                            ul
+                                                li
+                                                    a
+                                                        font-size: 14px
+                                                        line-height: 1.2
+                                                        color: $text
+                                                        padding: 3px 0
+                                                        font-family: $Poppins
+                                                    &:not(:last-child)
+                                                        margin-bottom: 0
+                    a
+                        display: inline-block
+                        padding: 6px 0
+                        transition: .5s ease
+                        opacity: 1
+                        color: $Black
+        .btm-nv
+            border-top: 1px solid $Black
+            margin-top: 30px
+            padding-top: 30px
+            ul
+                li
+                    margin-bottom: 8px
+                    a
+                        font-size: 18px
+                        color: $Black
+                        &:hover
+                            transform: translateX(2px)
+
+.inquiry_pop
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    height: 100%
+    transform: translateX(100%)
+    z-index: 9
+    transition: .5s ease
+    transition-delay: 0s
+    &.is-open
+        transform: translateX(0%)
+        transition-delay: .1s
+    .model-body
+        position: relative
+        width: 525px
+        background: #fff url(../images/backgrounds/chair-light-grey.png) no-repeat
+        background-position: bottom right
+        background-size: 35%
+        height: 100%
+        padding: 85px 30px 0
+        @include respond-to(screen-767)
+            width: 100%
+            padding: 80px 15px 0
+        @include respond-to(screen-320)
+            padding: 20px 15px 0
+        .close_model
+            position: absolute
+            right: 0
+            top: 0
+            padding: 25px
+            cursor: pointer
+            @include respond-to(screen-320)
+                padding: 15px
+        .model-body-wrap
+            padding-right: 12px
+            padding-left: 12px
+            @include respond-to(screen-767)
+                padding: 0
+        .heading-ttl
+            margin-bottom: 30px
+            h3
+                font-size: 20px
+                line-height: 1.2
+                font-family: $Poppins
+            p
+                font-size: 14px
+                line-height: 1.2
+                margin-top: 7px
+        .form
+            .col
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-between
+                .form-group
+                    flex: 0 1 49%
+                    max-width: 49%
+                    width: 100%
+                    margin-bottom: 12px
+                    position: relative
+                    @include respond-to(screen-767)
+                        flex: 0 1 100%
+                        max-width: 100%
+                    &.flex100
+                        flex: 0 1 100%
+                        max-width: 100%
+                    select
+                        height: auto
+                        padding: 9px !important
+                    input,select
+                        width: 100%
+                        font-family: inherit
+                        border: none
+                        font-size: 14px
+                        line-height: 1
+                        border-radius: 30px
+                        background: $White
+                        color: $Black
+                        padding: 12px
+                        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px
+                        border: 1px solid #f5f5f5
+                        &:focus
+                            outline: none
+                        option
+                            padding: 10px
+                            &:nth-child(odd)
+                                background: #f5f5f5
+                    label
+                        font-size: 14px
+                        position: absolute
+                        left: 15px
+                        top: 50%
+                        translate: 0 -50%
+                        pointer-events: none
+                        transition: .5s ease
+                        line-height: 1
+                        &.valid
+                            top: 1px
+                            background: none
+                            font-size: 12px
+                    textarea
+                        width: 100%
+                        resize: none
+                        border: none
+                        border-radius: 20px
+                        padding: 20px
+                        max-height: 135px
+                        color: $Black
+                        font-family: inherit
+                        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px
+                        border: 1px solid #f5f5f5
+                        @include respond-to(screen-320)
+                            max-height: 100px
+                        &:focus
+                            outline: none
+                        &::placeholder
+                            color: $Black
+                            font-family: inherit
+        .sbmt-btn
+            text-align: center
+            margin-top: 20px
+            @include respond-to(screen-320)
+                margin-top: 8px
+            a,button,input
+                display: block
+                padding: 7px 20px
+                background: $primary
+                font-family: $PoppinsM
+                color: $White
+                border-radius: 20px
+                &:hover
+                    background: $Black
+.cart-menu
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    height: 100%
+    transform: translateX(100%)
+    z-index: 9
+    transition: .5s ease
+    transition-delay: 0s
+    &.is-open
+        transform: translateX(0%)
+        transition-delay: .1s
+    .model-body
+        position: relative
+        width: 525px
+        background: #fff url(../images/backgrounds/chair-grey.png) no-repeat
+        background-position: bottom right
+        background-size: 35%
+        height: 100%
+        .close_model
+            position: absolute
+            right: 0
+            top: 0
+            padding: 25px
+            cursor: pointer
+        .model-body-wrap
+            height: 100%
+            .colA,.colB
+                overflow-y: auto
+                &::-webkit-scrollbar
+                    width: 2px
+                    background: none
+                &::-webkit-scrollbar-track
+                    box-shadow: none
+                &::-webkit-scrollbar-thumb
+                    background-color: $primary
+                    outline: 0
+            .colA
+                height: 45%
+            .colB
+                height: 55%
+            .colA
+                padding: 40px 35px
+                .ttl-cola
+                    margin-bottom: 25px
+                    h3
+                        font-family: $PoppinsM
+                        font-size: 24px
+                .product-col
+                    padding: 0 15px
+                    .col
+                        position: relative
+                        padding-bottom: 20px
+                        &:not(:last-child)
+                            margin-bottom: 25px
+                            border-bottom: 1px solid #E7E7E7
+                        .remove
+                            position: absolute
+                            right: 8px
+                            bottom: 18px
+                            cursor: pointer
+                            small
+                                font-size: 12px
+                                border-bottom: 1px solid $Black
+                                line-height: 1
+                                color: $Black
+                    .grid
+                        align-items: center
+                        grid-template-columns: auto 1fr auto
+                        .counter-prd
+                            border: 1px solid $Black
+                            height: fit-content
+                            padding: 2px 6px
+                            border-radius: 5px
+                            .counter
+                                user-select: none
+                            .plus,.minus
+                                margin-top: 2px
+                            button
+                                cursor: pointer
+                                font-family: $PoppinsM
+                                color: $Black
+                                font-size: 18px
+                            input
+                                width: 25px
+                                text-align: center
+                                pointer-events: none
+                                color: $Black
+                                font-family: inherit
+                            button,input
+                                background: none
+                                border: none
+                                outline: none
+                                &::-webkit-inner-spin-button,
+                                &::-webkit-outer-spin-button
+                                    -webkit-appearance: none
+                                    -moz-appearance: none
+                                    appearance: none
+                                    margin: 0
+                        .prd-dtl
+                            padding: 0 30px
+                            h6
+                                font-size: 15px
+                                line-height: 1
+                            small
+                                display: block
+                                font-size: 12px
+            .colB
+                background: #E7E7E7
+                padding: 30px 30px
+                .heading-ttl
+                    margin-bottom: 30px
+                    h3
+                        font-size: 16px
+                        line-height: 1.2
+                        font-family: $PoppinsM
+                    p
+                        font-size: 14px
+                        line-height: 1.2
+                        margin-top: 7px
+                .form
+                    .col
+                        display: flex
+                        flex-wrap: wrap
+                        justify-content: space-between
+                        .form-group
+                            flex: 0 1 49%
+                            max-width: 49%
+                            width: 100%
+                            margin-bottom: 12px
+                            position: relative
+                            &.flex100
+                                flex: 0 1 100%
+                                max-width: 100%
+                            select
+                                height: auto
+                                padding: 9px !important
+                            input,select
+                                width: 100%
+                                font-family: inherit
+                                border: none
+                                font-size: 14px
+                                line-height: 1
+                                border-radius: 30px
+                                background: $White
+                                color: $Black
+                                padding: 10px
+                                border: 1px solid #f5f5f5
+                                &:focus
+                                    outline: none
+                                option
+                                    padding: 10px
+                                    &:nth-child(odd)
+                                        background: #f5f5f5
+                            label
+                                font-size: 13px
+                                position: absolute
+                                left: 15px
+                                top: 50%
+                                translate: 0 -50%
+                                pointer-events: none
+                                transition: .5s ease
+                                line-height: 1
+                                &.valid
+                                    top: 1px
+                                    background: none
+                                    font-size: 12px
+                            textarea
+                                width: 100%
+                                resize: none
+                                border: none
+                                border-radius: 20px
+                                padding: 20px
+                                max-height: 90px
+                                color: $Black
+                                font-family: inherit
+                                background: $White
+                                border: 1px solid #f5f5f5
+                                &:focus
+                                    outline: none
+                                &::placeholder
+                                    color: $Black
+                                    font-family: inherit
+                .sbmt-btn
+                    text-align: center
+                    margin-top: 20px
+                    a,button,input
+                        display: block
+                        padding: 7px 20px
+                        background: $primary
+                        font-family: $PoppinsM
+                        color: $White
+                        border-radius: 20px
+                        &:hover
+                            background: $Black
+.off-tod-Searchmodel
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    height: 100%
+    background: #fff
+    transform: translateY(100%)
+    opacity: 1
+    transition: transform .6s cubic-bezier(.215,.61,.355,1) .1s,opacity .6s cubic-bezier(.215,.61,.355,1) .1s, height 0s
+    z-index: 9
+    &::-webkit-scrollbar
+        width: 3px
+        background: $Black
+    &::-webkit-scrollbar-track
+        box-shadow: none
+    &::-webkit-scrollbar-thumb
+        background-color: $White
+        outline: 0
+    &.is-open
+        opacity: 1
+        pointer-events: all
+        user-select: auto
+        transform: translateY(0%)
+    .close_model
+        position: absolute
+        top: 0
+        right: 0
+        z-index: 12
+        padding: 25px
+        cursor: pointer
+    .searchbar
+        position: sticky
+        top: 0
+        z-index: 11
+        width: 100%
+        background: #f5f5f5
+        border-bottom: 1px solid #e7e7e7
+        .SearchForm
+            padding: 15px
+            .form
+                .form-group
+                    position: relative
+                    margin: 0
+                    .form-control
+                        max-width: 100%
+                        width: 100%
+                        border: 0
+                        padding: 5px 0px
+                        padding-top: 20px
+                        padding-bottom: 0
+                        line-height: 60px
+                        font-size: 20px
+                        text-align: center
+                        height: auto
+                        background: none
+                        &:focus
+                            outline: none
+                        &:focus~label
+                            top: 5px
+                    &.valid
+                        label
+                            top: 5px
+                            font-size: 16px
+                    label
+                        display: block
+                        position: absolute
+                        top: 30px
+                        left: 0px
+                        right: 0
+                        font-size: 20px
+                        color: #a1a1a1
+                        letter-spacing: .5px
+                        text-align: center
+                        font-style: italic
+                        pointer-events: none
+                        transition: .5s ease
+    .off-tod-SearcToCat
+        position: absolute
+        top: 24%
+        left: 0
+        right: 0
+        .heading
+            margin-bottom: 50px
+            @include respond-to(screen-675)
+                margin-bottom: 35px
+            h3
+                font-size: 40px
+                line-height: 45px
+                @include respond-to(screen-675)
+                    font-size: 28px
+                    line-height: 32px
+        .products-search-slider
+            padding: 0 30px
+            .owl-dots
+                text-align: center
+                margin-top: 20px
+                button.owl-dot
+                    height: 11px
+                    width: 11px
+                    background: $text
+                    opacity: .6
+                    transition: .5s ease
+                    border-radius: 50%
+                    margin-inline: 5px
+                    &.active
+                        background: $primary
+                        opacity: 1
+            .card
+                border-radius: 0
+                overflow: hidden
+                .item
+                    position: relative
+                    img
+                        transition: .5s ease
+                    &::before
+                        content: ""
+                        position: absolute
+                        top: 0
+                        left: 0
+                        right: 0
+                        bottom: 0
+                        user-select: none
+                        pointer-events: none
+                        z-index: 1
+                        background: rgb(255,255,255)
+                        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 73%, rgb(0 0 0 / 59%) 83%)
+                    .catSlidContet
+                        position: absolute
+                        bottom: 10%
+                        left: 0
+                        right: 0
+                        text-align: center
+                        z-index: 1
+                        .catName
+                            color: $White
+                            font-size: 20px
+                            transition: .5s ease
+                    &:hover
+                        img
+                            transform: scale(1.1)
+                        .catName
+                            transform: scale(1.1) translateY(-10px)
+    .off-tod-SearchResult
+        .result
+            padding: 0 30px
+            .flex
+                justify-content: space-between
+                gap: 30px 0
+                .col
+                    flex: 0 1 24%
+                    max-width: 24%
+                    width: 100%
+                    @include respond-to(screen-675)
+                        flex: 0 1 48.5%
+                        max-width: 48.5%
+                    img
+                        width: 100%
+                    .product-inf
+                        margin-top: 5px
+                        text-align: center
+
+.google_reviewModel
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    transform: translateX(100%)
+    z-index: 9
+    transition: .5s ease
+    &.is-open
+        transform: translateX(0%)
+    .model-body
+        width: 480px
+        background: url(../images/backgrounds/chair-grey.png), linear-gradient(130deg, rgb(228, 228, 228) -11%, rgb(255, 255, 255) 100%)
+        background-repeat: no-repeat
+        background-size: 37%,100%
+        background-position: 100% 92%
+        padding: 30px
+        margin-left: auto
+        margin-right: 0
+        height: 100%
+        position: relative
+        z-index: 11
+        transition: all .5s ease 0.5s
+        @include respond-to(screen-767)
+            width: 100%
+        .close
+            position: absolute
+            right: 0
+            padding: 20px
+            padding-top: 10px
+            cursor: pointer
+    .gooRev-Header
+        margin: 12px 0 30px
+        .heading
+            h3
+                color: $Black
+                font-size: 32px
+                margin-bottom: 8px
+        .to_review
+            img
+                display: inline-block
+        .to_review
+            span
+                padding-right: 7px
+            span.pl
+                margin-left: 7px
+                color: $text
+    .gooRev-Body
+        height: 100%
+        overflow-y: scroll
+        margin-right: -30px
+        padding-right: 30px
+        padding-bottom: 148px
+        &::-webkit-scrollbar
+            width: 3px
+            background: $White
+        &::-webkit-scrollbar-track
+            box-shadow: none
+        &::-webkit-scrollbar-thumb
+            background-color: $Black
+            outline: 0
+        .item
+            display: grid
+            gap: 22px 12px
+            grid-template-columns: max-content 1fr
+            .icon
+                img
+                    width: 35px
+                    height: 35px
+                    border-radius: 50%
+                    object-fit: cover
+            .rating
+                img
+                    display: inline-block
+            .content
+                p
+                    margin-top: 15px
+                    font-size: 14px
+                    line-height: 1.6
+    .gooRev-Footer
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        width: 100%
+        background: #e7e7e7
+        padding: 12px 0
+        p
+            a
+                display: flex
+                align-items: center
+                justify-content: center
+                gap: 5px
+                span
+                    color: $text
+                    font-size: 13px
+                    display: inline-block
+                    vertical-align: middle
+.brocher-popmodel
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 9
+    transform: translateY(100%)
+    opacity: 0
+    &.is-open
+        transform: translateY(0%)
+        opacity: 1
+    .model-body
+        position: relative
+        .close_model
+            position: absolute
+            top: 0
+            right: 0
+            padding: 15px
+            z-index: 1
+            filter: invert(1)
+            cursor: pointer
+        iframe
+            height: 100vh
+            width: 100%
+            border: none
+
+.teampopup
+    position: fixed
+    top: 50%
+    left: 50%
+    z-index: 9
+    translate: -50% 0%
+    transform: translateY(100%)
+    @include respond-to(screen-1280)
+        width: 70%
+    @include respond-to(screen-991)
+        width: 85%
+    @include respond-to(screen-767)
+        width: 100%
+        left: 0
+        right: 0
+        translate: 0 0
+        top: 0
+        bottom: 0
+    &.is-open
+        translate: -50% -50%
+        transform: translateY(0%)
+        transition: 0s ease
+        @include respond-to(screen-767)
+            translate: 0 0
+        .model-body
+            opacity: 1
+            transform: translateX(0)
+    .close_model
+        position: absolute
+        right: 0
+        top: 0
+        padding: 15px
+        z-index: 1
+        cursor: pointer
+    .model-body
+        background: $White
+        --base-padding: 30px
+        padding: var(--base-padding)
+        position: relative
+        opacity: 0
+        transition: all 0.3s
+        transform: translateX(-50px)
+        @include respond-to(screen-767)
+            --base-padding: 15px
+            padding-top: 50px
+            height: 100%
+            overflow-y: auto
+        .flex
+            justify-content: space-between
+            @include respond-to(screen-767)
+                gap: 20px 0
+            .colA
+                flex: 0 1 35%
+                max-width: 35%
+                width: 100%
+                @include respond-to(screen-767)
+                    flex: 0 1 100%
+                    max-width: 100%
+                figure
+                    img
+                        width: 100%
+                .profile-lnkdin
+                    padding-top: 10px
+                    text-align: center
+                    display: block
+                    svg
+                        height: 25px
+                        width: 25px
+                        fill: #0072b1
+            .colB
+                flex: 0 1 65%
+                max-width: 65%
+                width: 100%
+                padding-left: 35px
+                @include respond-to(screen-767)
+                    flex: 0 1 100%
+                    max-width: 100%
+                    padding-left: 0
+            .upder-desc
+                border-bottom: 1px solid #d7d7d7
+                padding-bottom: 15px
+                margin-bottom: 20px
+                .name-mmbr
+                    font-size: 28px
+                    font-family: $PoppinsM
+                .desg-mmbr
+                    color: $text
+                    padding-top: 3px
+            .content
+                max-height: 360px
+                overflow-y: auto
+                margin-right: calc(var(--base-padding) * -1)
+                @include respond-to(screen-767)
+                    max-height: 100%
+                    margin-right: 0
+                &::-webkit-scrollbar
+                    width: $scrollwidth
+                    background: none
+                &::-webkit-scrollbar-track
+                    box-shadow: none
+                &::-webkit-scrollbar-thumb
+                    background-color: $text
+                    outline: 0
+                p
+                    color: $text
+                    margin-bottom: 15px

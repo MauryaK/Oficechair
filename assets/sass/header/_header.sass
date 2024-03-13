@@ -1,0 +1,497 @@
+header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 9
+    transition: .5s ease
+    background: rgb(16 16 16 / 69%)
+    backdrop-filter: blur(20px)
+    display: flex
+    flex-direction: column
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        height: 0
+        background: $Black
+        transition: .5s ease
+    &.header-fixed
+        &::before
+            height: 100%
+    .slide-top-content
+        background: $lightgrey
+        position: relative
+        .wrap-slide-top
+            padding: 20px 0
+            position: relative
+            .close-ico
+                position: absolute
+                right: 0
+                top: 0
+                padding: 15px
+                cursor: pointer
+            .flex
+                justify-content: space-between
+                .col
+                    flex: 0 1 30%
+                    max-width: 30%
+                    width: 100%
+                    padding-right: 15px
+                    &:not(:last-child)
+                        border-right: 1px solid #cecece
+                    &.col-3
+                        padding-right: 7em
+                    &.col-2
+                        display: flex
+                        flex-wrap: wrap
+                        align-items: center
+                        gap: 0 25px
+                        figure
+                            flex: 0 1 auto
+                            img
+                                width: 47px
+                                animation: 1s infinite alternate action
+                                @keyframes action
+                                    0%
+                                        transform: translateY(0)
+                                    100%
+                                        transform: translateY(-10px)
+                        .col-2-md
+                            flex: 1
+                            a
+                                display: inline-flex
+                                justify-content: flex-start
+                                gap: 0 12px
+                                align-items: center
+                                img
+                                    width: 18px
+                    h6
+                        font-size: 16px
+                        line-height: 1
+                    p,a
+                        font-size: 14px
+                        line-height: 1.3
+                    a
+                        color: $primary
+                    p
+                        color: $text
+                        margin-top: 6px
+    .header-wrapper
+        position: relative
+        z-index: 1
+        &::before
+            content: ""
+            position: absolute
+            left: 0
+            top: 0
+            right: 0
+            bottom: 0
+            transition: .5s ease
+            pointer-events: none
+            user-select: none
+            background: linear-gradient(0deg, rgba(255,255,255,0) 30%, rgba(0,0,0,0.9332107843137255) 100%)
+        a,p,label
+            color: $White
+        .flex
+            justify-content: space-between
+            align-items: center
+            @include respond-to(screen-767)
+                flex-direction: row-reverse
+        nav
+            ul
+                li
+                    display: inline-block
+                    a
+                        text-transform: uppercase
+                    &.slide-top
+                        &.active
+                            a
+                                color: $primary
+                    &.has-drpdwn
+                        position: relative
+                        a
+                            display: flex
+                            align-items: center
+                            gap: 0 12px
+                        &:hover
+                            .drpdwn-menu
+                                max-height: inherit
+                                transform: translateY(0px)
+                                opacity: 1
+                                overflow: visible
+                                transition: opacity .5s ease,transform .5s ease, max-height 0s
+                        .drpdwn-menu
+                            position: absolute
+                            top: 100%
+                            left: 50%
+                            translate: -50% 0
+                            background: $White
+                            transform: translateY(10px)
+                            width: 200px
+                            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px
+                            border-radius: 6px
+                            margin-top: 14px
+                            max-height: 0
+                            overflow: hidden
+                            opacity: 0
+                            transition: all 0s
+                            z-index: 2
+                            padding: 10px 0
+                            &::before
+                                position: absolute
+                                content: ""
+                                top: 0
+                                left: 50%
+                                translate: -50% -100%
+                                width: 0
+                                height: 0
+                                border-left: 12px solid transparent
+                                border-right: 12px solid transparent
+                                border-bottom: 12px solid $White
+                            &::after
+                                position: absolute
+                                content: ''
+                                left: 0
+                                right: 0
+                                top: 0
+                                width: 100%
+                                height: 20px
+                                translate: 0 -100%
+                            ul
+                                position: relative
+                                max-height: 216px
+                                overflow-y: auto
+                                &::-webkit-scrollbar
+                                    width: 2px
+                                    background: none
+                                &::-webkit-scrollbar-track
+                                    box-shadow: none
+                                &::-webkit-scrollbar-thumb
+                                    background-color: $text
+                                    outline: 0
+                                li
+                                    margin-left: 0
+                                    display: block
+                                    padding: 0 10px
+                                    a
+                                        text-transform: capitalize
+                                        display: block
+                                        color: $Black
+                                        padding: 5px 10px
+                                        border-radius: 30px
+                                        transition: 0s
+                                        &:hover
+                                            transition: .5s ease
+                                            background: $primary
+                                            color: $White
+        .upper-header
+            padding: 10px 0
+            border-bottom: 1px solid #c3c8cd33
+            position: relative
+            @include respond-to(screen-991)
+                border-bottom: none
+                padding: 8px 0
+            nav
+                ul
+                    li
+                        &:not(:first-child)
+                            margin-left: 30px
+                            @include respond-to(screen-1366)
+                                margin-left: 15px
+                            @include respond-to(screen-1152)
+                                margin-left: 12px
+            a
+                font-size: 12px
+                line-height: 18px
+            .flex
+                .colB
+                    @include respond-to(screen-1024)
+                        max-width: 115px
+                .colA,.colC
+                    display: flex
+                    align-items: center
+                    gap: 0 35px
+                    flex: 1 1
+                    @include respond-to(screen-1152)
+                        gap: 0 20px
+                    @include respond-to(screen-991)
+                        gap: 0 35px
+                    @include respond-to(screen-767)
+                        gap: 0 20px
+                .colA
+                    @include respond-to(screen-767)
+                        flex-direction: row-reverse
+                    nav
+                        @include respond-to(screen-991)
+                            display: none
+                    .ham-btn
+                        width: 35px
+                        display: flex
+                        flex-direction: column
+                        gap: 8px
+                        cursor: pointer
+                        span
+                            width: 100%
+                            background: $White
+                            height: 1px
+                            display: block
+                    .get_quote
+                        a
+                            display: block
+                            padding: 6px 20px
+                            border: 1px solid #606060
+                            border-radius: 30px
+                            &:hover
+                                border-color: $primary
+                                background: $primary
+                .colC
+                    justify-content: flex-end
+                    @include respond-to(screen-767)
+                        display: none
+                    ul
+                        li
+                            &:nth-child(3)
+                                @include respond-to(screen-991)
+                                    display: none
+                    .search-bar
+                        cursor: pointer
+                    .has-drpdwn
+                        @include respond-to(screen-1024)
+                            display: none
+                .cart-nav
+                    @include respond-to(screen-1024)
+                        width: 25px
+                    .cart-btn
+                        position: relative
+                        cursor: pointer
+                        span
+                            position: absolute
+                            right: -8px
+                            top: -8px
+                            height: 20px
+                            width: 20px
+                            border-radius: 50%
+                            font-size: 12px
+                            background: $primary
+                            color: $White
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            @include respond-to(screen-1024)
+                                font-size: 8px
+                                height: 15px
+                                width: 15px
+                                right: -8px
+                                top: -5px
+.bottom-header
+    position: relative
+    @include respond-to(screen-991)
+        display: none
+    .container-fluid
+        nav
+            >ul
+                display: flex
+                align-items: center
+                justify-content: center
+                text-align: center
+                li
+                    transition: .5s ease
+                    padding: 0 30px
+                    position: relative
+                    cursor: pointer
+                    @include respond-to(screen-1024)
+                        padding: 0 20px
+                    a
+                        display: inline-block
+                        height: 100%
+                        position: relative
+                        cursor: pointer
+                        padding: 10px 0
+                        font-size: 14px
+                        line-height: 18px
+                        display: block
+                        @include respond-to(screen-1024)
+                            font-size: 13px
+                        &::before
+                            content: ""
+                            position: absolute
+                            background: $primary
+                            height: 3px
+                            left: 50%
+                            right: 50%
+                            bottom: 0
+                            transition: .5s ease
+                    &:hover
+                        >a
+                            &::before
+                                right: 0
+                                left: 0
+                        .content-nav-pop
+                            transform: translateY(0%)
+                            opacity: 1
+                            transition: none
+                            overflow: visible
+                            cursor: initial
+                            .content-nav-pop-wrap
+                                .flex
+                                    .colA
+                                        .product-nav
+                                            .prd-cat
+                                                ul
+                                                    li
+                                                        transform: translateY(0px)
+                                                        opacity: 1
+                                    .colB
+                                        .product-nav-tab
+                                            .prd-tabs
+                                                .prd-cat-wrap
+                                                    .prd-cat-content
+                                                        .grid
+                                                            .col
+                                                                opacity: 1
+                                                                transform: translateY(0px)
+                    .content-nav-pop
+                        position: fixed
+                        left: 0
+                        right: 0
+                        height: calc(100vh - $headerheight)
+                        background: #0000006c
+                        transform: translateY(100%)
+                        opacity: 0
+                        overflow: hidden
+                        pointer-events: none
+                        user-select: none
+                        @include respond-to(screen-1024)
+                            height: calc(100vh - 100.63px)
+                        .content-nav-pop-wrap
+                            background: $White
+                            pointer-events: all
+                            user-select: auto
+                            .flex
+                                align-items: initial
+                                .colA
+                                    background: $primary url(../images/backgrounds/chair-small.png) no-repeat
+                                    background-position: bottom right
+                                    flex: 0 1 25%
+                                    max-width: 25%
+                                    width: 100%
+                                    .product-nav
+                                        position: relative
+                                        .prd-cat
+                                            padding: 40px 50px
+                                            @include respond-to(screen-1024)
+                                                padding: 40px 20px
+                                            ul
+                                                text-align: left
+                                                li
+                                                    display: block
+                                                    color: $White
+                                                    font-family: $PoppinsM
+                                                    background: none
+                                                    border-radius: 20px
+                                                    padding: 5px 20px
+                                                    cursor: pointer
+                                                    opacity: 0
+                                                    transform: translateY(8px)
+                                                    transition: transform .6s cubic-bezier(.215,.61,.355,1) .1s,opacity .6s cubic-bezier(.215,.61,.355,1) .1s
+                                                    @include respond-to(screen-1280)
+                                                        font-size: 14px
+                                                        line-height: 1.2
+                                                    &.active,&:hover
+                                                        color: $Black
+                                                        background: $White
+                                                    &:not(:last-child)
+                                                        margin-bottom: 12px
+                                .colB
+                                    background: $White
+                                    flex: 0 1 75%
+                                    max-width: 75%
+                                    width: 100%
+                                    padding: 40px 50px 50px
+                                    height: 57.4vh
+                                    overflow-y: auto
+                                    &::-webkit-scrollbar
+                                        width: 2px
+                                    &::-webkit-scrollbar-track
+                                        box-shadow: none
+                                    &::-webkit-scrollbar-thumb
+                                        background-color: $primary
+                                        outline: 0
+                                    .product-nav-tab
+                                        position: relative
+                                        .prd-tabs
+                                            &.active
+                                                opacity: 1
+                                                position: unset
+                                                pointer-events: all
+                                                user-select: auto
+                                            .prd-cat-wrap
+                                                position: relative
+                                                .prd-cat-content
+                                                    position: absolute
+                                                    top: 0
+                                                    left: 0
+                                                    right: 0
+                                                    bottom: 0
+                                                    opacity: 0
+                                                    pointer-events: none
+                                                    user-select: none
+                                                    transition: .5s ease
+                                                    transform: translateY(12px)
+                                                    transition: 0s
+                                                    &.active
+                                                        opacity: 1
+                                                        position: unset
+                                                        pointer-events: all
+                                                        user-select: auto
+                                                        transform: translateY(0px)
+                                                        opacity: 1
+                                                        transition: transform .6s cubic-bezier(.215,.61,.355,1) .1s,opacity .6s cubic-bezier(.215,.61,.355,1) .1s
+                                                    .grid
+                                                        grid-template-columns: repeat(5,1fr)
+                                                        grid-gap: 20px 10px
+                                                        @include respond-to(screen-1024)
+                                                            grid-template-columns: repeat(3, 1fr)
+                                                        .col
+                                                            position: relative
+                                                            text-align: center
+                                                            border: 1px solid #d2d2d2
+                                                            border-radius: 5px
+                                                            padding: 20px
+                                                            transform: translateY(8px)
+                                                            opacity: 0
+                                                            transition: transform .6s cubic-bezier(.215,.61,.355,1) .1s,opacity .6s cubic-bezier(.215,.61,.355,1) .1s, height 0s
+                                                            img
+                                                                margin: 0 auto
+                                                            p
+                                                                font-size: 14px
+                                                                line-height: 19px
+                                                                color: $Black
+                                                                max-width: 125px
+                                                                margin: 0 auto
+                                                                margin-top: 15px
+                                                            .product-link-jtp
+                                                                position: absolute
+                                                                top: 0
+                                                                left: 0
+                                                                right: 0
+                                                                bottom: 0
+                                                                z-index: 1
+                                    .view-clt-button
+                                        text-align: center
+                                        margin: 40px 0 0
+                                        a
+                                            color: $text
+                                            display: inline-block
+                                            font-size: 14px
+                                            line-height: 1.2
+                                            border: 1px solid $text
+                                            padding: 8px 30px
+                                            border-radius: 20px
+                                            &:hover
+                                                background: $primary
+                                                border-color: $primary
+                                                color: $White

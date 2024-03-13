@@ -1,0 +1,467 @@
+*,
+*::before,
+*::after
+    padding: 0
+    margin: 0
+    list-style: none
+    box-sizing: border-box
+//
+$scrollwidth: 3px
+//
+body,html
+    font-family: $Poppins
+    font-size: 16px
+    line-height: 24px
+    color: $Black
+    color: none
+    &::-webkit-scrollbar
+        width: $scrollwidth
+        background: $White
+    &::-webkit-scrollbar-track
+        box-shadow: none
+    &::-webkit-scrollbar-thumb
+        background-color: $Black
+        outline: 0
+body
+    &.overfloy-hidden
+        overflow: hidden
+        margin-right: $scrollwidth
+        header
+            transition: 0s
+            margin-right: $scrollwidth
+a[href]
+    text-decoration: none
+    color: $Black
+    transition: .5s ease
+    cursor: pointer
+img
+    max-width: 100%
+    display: block
+    transition: .5s ease
+.container
+    max-width: 1280px
+    width: 100%
+    margin: 0 auto
+    @include respond-to(screen-1280)
+        padding: 0 25px
+    @include respond-to(screen-767)
+        padding: 0 15px
+    &.container2
+        @include respond-to(screen-675)
+            padding-right: 0
+.container-fluid
+    padding: 0 25px
+    display: block
+    margin: 0 auto
+    @include respond-to(screen-991)
+        padding: 0 15px
+h1,h2,h3
+    font-family: $Antiga
+    font-weight: normal
+h4,h5,h6
+    font-family: $PoppinsM
+    font-weight: normal
+h1
+    font-size: 72px
+    line-height: 1
+    @include respond-to(screen-1366)
+        font-size: 60px
+    @include respond-to(screen-1140)
+        font-size: 50px
+    @include respond-to(screen-991)
+        font-size: 46px
+    @include respond-to(screen-767)
+        //font-size: 34px
+h2
+    font-size: 48px
+    line-height: 1
+h3
+    font-size: 36px
+    line-height: 36px
+    @include respond-to(screen-1300)
+        font-size: 30px
+        line-height: 33px
+    @include respond-to(screen-1140)
+        font-size: 26px
+        line-height: 29px
+    @include respond-to(screen-767)
+        font-size: 24px
+        line-height: 26px
+h4
+    font-size: 24px
+    line-height: 30px
+    @include respond-to(screen-1366)
+        font-size: 22px
+        line-height: 22px
+    @include respond-to(screen-767)
+        font-size: 18px
+        line-height: 18px
+h5
+    font-size: 20px
+    line-height: 1
+    @include respond-to(screen-1300)
+        font-size: 18px
+h6
+    font-size: 18px
+    line-height: 24px
+    @include respond-to(screen-1024)
+        font-size: 16px
+        line-height: 22px
+.text-center
+    text-align: center
+.grid
+    display: grid
+.invert
+    filter: invert(1)
+.flex
+    display: flex
+    flex-wrap: wrap
+.heading
+    h3
+        font-size: 48px
+        line-height: 1
+        @include respond-to(screen-1366)
+            font-size: 42px
+        @include respond-to(screen-991)
+            font-size: 36px
+        @include respond-to(screen-767)
+            font-size: 32px
+        em
+            font-style: normal
+            font-family: $Silver
+            font-weight: 100
+            font-size: 60px
+            line-height: 0.6
+            @include respond-to(screen-991)
+                font-size: 48px
+            @include respond-to(screen-767)
+                font-size: 44px
+    &.size30
+        h3
+            font-size: 30px
+            line-height: 1
+            @include respond-to(screen-1366)
+                font-size: 26px
+            @include respond-to(screen-767)
+                font-size: 24px
+    &.size36
+        h3
+            font-size: 36px
+            line-height: 1
+            @include respond-to(screen-1024)
+                font-size: 32px
+            @include respond-to(screen-991)
+                font-size: 28px
+            @include respond-to(screen-767)
+                font-size: 25px
+            @include respond-to(screen-365)
+                font-size: 24px
+    &.semibold
+        h3
+            font-family: $PoppinsSB
+    &.regular
+        h3
+            font-family: $Poppins
+    p
+        color: $text
+        line-height: 1.4
+.custom-scroll
+    &::-webkit-scrollbar
+        width: $scrollwidth
+    &::-webkit-scrollbar-track
+        box-shadow: none
+    &::-webkit-scrollbar-thumb
+        background-color: $text
+        outline: 0
+input,button,select
+    font-size: 16px
+    line-height: 24px
+    color: $text
+
+.overlay
+    position: fixed
+    left: 0
+    top: 0
+    bottom: 0
+    height: 100%
+    z-index: 9
+    background: #0000006c
+    pointer-events: none
+    user-select: none
+    opacity: 0
+    transition: opacity .8s ease
+    &.overlay_active
+        opacity: 1
+        left: 0
+        width: 100%
+        pointer-events: all
+// Video icon
+.video_icon
+    width: 55px
+    height: 55px
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    border: 1px solid $White
+    border-radius: 50%
+    &:before
+        width: 50px
+        height: 50px
+        top: 50%
+        right: 0
+        bottom: 0
+        left: 50%
+        position: absolute
+        content: ""
+        transform: translateX(-50%) translateY(-50%)
+        background: $White
+        border-radius: 50%
+        display: block
+        animation: pulse-border 1500ms ease-out infinite
+    img
+        width: 10px
+        position: relative
+        margin-left: 5px
+@keyframes pulse-border
+    0%
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1)
+        opacity: 0.5
+    100%
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5)
+        opacity: 0
+.ModelPop
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    z-index: 3
+    .close
+        position: absolute
+        top: 0
+        right: 0
+        padding: 30px
+        cursor: pointer
+        display: flex
+        align-items: center
+        justify-content: center
+        svg
+            width: 25px
+            height: 25px
+.Model_Video
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 9
+    background: #000
+    transform: translateY(100%)
+    transition: .5s ease
+    &.is-open
+        transform: translateY(0%)
+    .close_model
+        filter: invert(1)
+        position: absolute
+        top: 0
+        right: 0
+        padding: 30px
+        cursor: pointer
+    .modelBody
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        iframe
+            width: 90%
+            height: 85%
+            border: 0
+
+//custom tabs          
+
+.tab-nav
+    ul
+        text-align: center
+        li
+            display: inline-block
+            cursor: pointer
+.tab-nav-content
+    position: relative
+    overflow: hidden
+    .tabs
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        opacity: 0
+        user-select: none
+        pointer-events: none
+        transition: 0s ease
+        &.active
+            transition: .5s ease
+            position: unset
+            opacity: 1
+            visibility: visible
+            user-select: auto
+            pointer-events: all
+
+//
+
+.item-md
+    position: relative
+    figure
+        overflow: hidden
+    &::before,&::after
+        position: absolute
+        content: ''
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        user-select: none
+        pointer-events: none
+        z-index: 1
+    &::after
+        content: none
+    .item-title
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        z-index: 1
+    .link-md
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 2
+
+//BANNER
+
+.banner
+    position: relative
+    &::before,&::after
+        content: ""
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        top: 0
+        pointer-events: none
+        user-select: none
+    .bg
+        @include respond-to(screen-767)
+            height: 400px
+        img
+            height: 100%
+            width: 100%
+            object-fit: cover
+    .banner-wrapper
+        position: absolute
+        top: 50%
+        left: 0
+        right: 0
+        z-index: 1
+        @include respond-to(screen-767)
+            padding: 0 15px
+        &.center-wrap
+            left: 50%
+            translate: -50% 0
+            text-align: center
+            top: auto
+            bottom: 0
+            @include respond-to(screen-767)
+                left: 0
+                right: 0
+                translate: 0 0
+            .content
+                padding-left: 0
+        .content
+            padding-left: 8rem
+            @include respond-to(screen-1024)
+                padding-left: 4rem
+            @include respond-to(screen-767)
+                padding-left: 0
+            h1,p
+                color: $White
+            p
+                font-family: $PoppinsM
+
+//custom-check-box
+
+.checkboxli
+    display: flex
+    gap: 0 15px
+    position: relative
+    width: fit-content
+    >p
+        line-height: 1.3
+    span
+        position: relative
+        display: block
+        height: auto
+        width: 18px
+        p
+            height: 18px
+            width: 18px
+            position: relative
+            border: 1px solid $text
+            border-radius: 2px
+            &::after
+                content: ""
+                position: absolute
+                left: 50%
+                top: 45%
+                translate: -50% -50%
+                width: 4px
+                height: 9px
+                border: solid $White
+                border-width: 0 1px 1px 0
+                transform: rotate(45deg)
+                opacity: 0
+    input
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        opacity: 0
+        z-index: 1
+        cursor: pointer
+        &:checked ~ span p
+            background-color: $primary
+            border-color: $primary
+            &::after
+                opacity: 1
+
+//load-more button
+
+.load-more-btn
+    a,input,button
+        display: inline-flex
+        color: $primary
+        border: 1px solid $primary
+        justify-content: center
+        align-items: center
+        font-family: $PoppinsM
+        gap: 0 15px
+        padding: 8px 35px
+        border-radius: 30px
+        &:hover
+            background: $primary
+            color: $White
+            img
+                filter: invert(1) brightness(35)
+
+//
+
+.headerheight
+    margin-top: $headerheight
+    @include respond-to(screen-1024)
+        margin-top: 100.63px
+    @include respond-to(screen-991)
+        margin-top: 57.63px

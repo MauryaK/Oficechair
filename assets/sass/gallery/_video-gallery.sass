@@ -1,0 +1,146 @@
+.banner
+    &.download-banner
+        &.video-gallery-banner
+            .bg
+                @include respond-to(screen-991)
+                    height: 424px
+            .banner-wrapper
+                .flex
+                    padding-right: 0
+                    .content
+                        flex: 0 1 28%
+                        max-width: 28%
+                        width: 100%
+                        @include respond-to(screen-767)
+                            flex: 0 1 100%
+                            max-width: 100%
+                    .video-gallery-demo
+                        flex: 0 1 57%
+                        max-width: 57%
+                        width: 100%
+                        @include respond-to(screen-767)
+                            display: none
+                        .video-gallery-slider
+                            .owl-item
+                                opacity: .7
+                                &.current
+                                    opacity: 1
+                                    figure
+                                        opacity: .8
+                            figure
+                                background: $Black
+                                opacity: .4
+                                transition: .5s ease
+                                img
+                                    width: 100%
+                            .item-title
+                                top: 50%
+                                translate: 0 -50%
+                                bottom: auto
+                                .video_icon
+                                    margin: 0 auto
+                                    height: 65px
+                                    width: 65px
+                                    border-width: 2px
+                                    @include respond-to(screen-1366)
+                                        height: 58px
+                                        width: 58px
+                                        border-width: 1px
+                                    &::before
+                                        height: 60px
+                                        width: 60px
+                                        @include respond-to(screen-1366)
+                                            height: 53px
+                                            width: 53px
+                                    img
+                                        width: 12px
+                                        margin: 0 auto
+                            .owl-dots
+                                margin-top: 30px
+                                text-align: center
+                                margin-right: 15rem
+                                button.owl-dot
+                                    height: 9px
+                                    width: 9px
+                                    border-radius: 50%
+                                    background: $White
+                                    opacity: .5
+                                    transition: .5s ease
+                                    margin-inline: 5px
+                                    &.active
+                                        opacity: 1
+.download-secA
+    &.video-gallery-secA
+        .download-wrap
+            padding: 0 4rem
+            @include respond-to(screen-1024)
+                padding: 0 2rem
+            @include respond-to(screen-991)
+                padding: 0 15px
+            .download-tab-content
+                &.video-gallery-tab-content
+                    .tabs
+                        .grid
+                            --item-height: 70vh
+                            grid-template-columns: repeat(6, 1fr)
+                            grid-template-rows: calc( var(--item-height)/2 ) calc( var(--item-height)/2 )
+                            grid-gap: 20px
+                            @include respond-to(screen-1366)
+                                grid-gap: 15px
+                                --item-height: 58vh
+                            @include respond-to(screen-1152)
+                                --item-height: 400px
+                            @include respond-to(screen-991)
+                                --item-height: 312px
+                                grid-template-rows: repeat(var(--item-height))
+                                grid-template-columns: repeat(2, 1fr)
+                            @include respond-to(screen-767)
+                                --item-height: 312px
+                                grid-template-columns: 100%
+                            .item
+                                &::before
+                                    background: linear-gradient(0deg, rgb(0 0 0 / 40%) 9%, rgba(255, 255, 255, 0) 56%)
+                                figure
+                                    height: 100%
+                                    background: $Black
+                                    img
+                                        opacity: .7
+                                        height: 100%
+                                        width: 100%
+                                        object-fit: cover
+                                .video-title
+                                    text-align: center
+                                    padding-bottom: 5rem
+                                    color: $White
+                                    font-family: $PoppinsM
+                                    @include respond-to(screen-767)
+                                        padding-bottom: 2rem
+                                .video_icon
+                                    position: absolute
+                                    top: 50%
+                                    translate: 0 -50%
+                                    left: 0
+                                    right: 0
+                                    margin: 0 auto
+                                    border-width: 2px
+                                &:nth-child(1)
+                                    height: 100%
+                                    grid-area: span 2/ span 4
+                                    @include respond-to(screen-991)
+                                        grid-area: auto
+                                &:nth-child(2),&:nth-child(3)
+                                    grid-column: span 2
+                                    @include respond-to(screen-991)
+                                        grid-column: auto
+                                    .video-title
+                                        padding-bottom: 2rem
+                                        @include respond-to(screen-991)
+                                            padding-bottom: 5rem
+                                        @include respond-to(screen-767)
+                                            padding-bottom: 2rem
+                                &:nth-child(n+4)
+                                    grid-column: span 3
+                                    height: var(--item-height)
+                                    @include respond-to(screen-991)
+                                        grid-column: auto
+                                        height: auto

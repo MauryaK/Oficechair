@@ -1,0 +1,1163 @@
+
+.banner-home
+    position: relative
+    @include respond-to(screen-767)
+        display: flex
+        flex-direction: column-reverse
+    video
+        height: 100%
+        width: 100%
+        object-fit: cover
+    .banner-tab
+        position: absolute
+        height: calc( 100vh - $headerheight )
+        bottom: 0
+        right: 0
+        z-index: 1
+        @include respond-to(screen-1152)
+            height: calc(100% - $headerheight)
+        @include respond-to(screen-1024)
+            height: calc(100% - 100.63px)
+        @include respond-to(screen-991)
+            height: calc(100% - 57.63px)
+        @include respond-to(screen-767)
+            position: unset
+            height: auto
+            left: 0
+            z-index: 2
+        ul
+            display: flex
+            flex-wrap: wrap
+            flex-direction: column
+            height: 100%
+            @include respond-to(screen-767)
+                display: block
+            &::before,&::after
+                content: ""
+                position: absolute
+                left: 0
+                right: 0
+                bottom: 0
+                height: 52px
+                pointer-events: none
+                user-select: none
+                display: none
+                z-index: 2
+                @include respond-to(screen-767)
+                    display: block
+            &::before
+                background: linear-gradient(90deg, rgb(0 0 0 / 36%) 0%, rgba(255, 255, 255, 0) 11%)
+            &::after
+                background: linear-gradient(278deg, rgb(0 0 0 / 46%) 0%, rgba(255, 255, 255, 0) 11%)
+            .owl-nav
+                button.owl-prev,.owl-next
+                    position: absolute
+                    top: 0
+                    bottom: 0
+                    height: 100%
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    z-index: 3
+                    img
+                        filter: invert(1)
+                .owl-prev
+                    left: 10px
+                .owl-next
+                    right: 10px
+            .owl-stage
+                display: flex
+                .owl-item
+                    height: auto
+                    box-sizing: content-box
+                    &:not(:last-child)
+                        border-right: 1px solid #ffffffa3
+                        border-bottom: none
+                    .item
+                        height: 100%
+            img
+                width: auto
+            li
+                flex: 0 1 20%
+                display: flex
+                align-items: center
+                justify-content: center
+                background: $primary
+                font-size: 14px
+                line-height: 18px
+                padding: 0 30px
+                position: relative
+                @include respond-to(screen-767)
+                    height: 100%
+                    padding: 0
+                &:not(:last-child)
+                    border-bottom: 1px solid #ffffffa3
+                    @include respond-to(screen-767)
+                        border-bottom: none
+                .bg-img
+                    position: absolute
+                    top: 0
+                    left: 0
+                    bottom: 0
+                    right: 0
+                    img
+                        opacity: 0
+                        height: 100%
+                        @include respond-to(screen-767)
+                            width: 100%
+                span
+                    display: block
+                    color: $White
+                    max-width: 80px
+                    @include respond-to(screen-767)
+                        padding: 8px 10px
+                    .video-icon
+                        height: 40px
+                        width: 40px
+                        border: 1px solid $White
+                        display: grid
+                        place-items: center
+                        border-radius: 50%
+                        margin: 0 auto
+                        margin-bottom: 10px
+                        @include respond-to(screen-767)
+                            display: none
+                &.active
+                    background: $White
+                    .bg-img
+                        img
+                            opacity: .25
+                    .video-icon
+                        border-color: $Black
+                        img
+                            filter: invert(1)
+                    span
+                        color: $Black
+
+    .banner-tab-content
+        .tabs
+            transition: .2s linear
+            &.active
+                .tabs-wrap
+                    .bg
+                        video
+                            transform: scale(1)
+            .tabs-wrap
+                position: relative
+                .bg
+                    height: 100vh
+                    overflow: hidden
+                    @include respond-to(screen-1152)
+                        height: auto
+                        line-height: 0
+                    @include respond-to(screen-991)
+                        height: 585px
+                    @include respond-to(screen-675)
+                        height: 450px
+                    video
+                        transform: scale(1.4)
+                        transition: .8s ease
+                .content
+                    position: absolute
+                    left: 10%
+                    bottom: 20%
+                    max-width: 350px
+                    z-index: 1
+                    @include respond-to(screen-1152)
+                        max-width: 300px
+                    @include respond-to(screen-991)
+                        max-width: 272px
+                    h1,p
+                        color: $White
+                    p
+                        margin: 0 0 20px
+                    .explore-btn
+                        a
+                            color: $White
+                            display: flex
+                            align-items: center
+                            gap: 0 25px
+                            font-size: 14px
+                            text-transform: uppercase
+                            font-family: $PoppinsM
+                            .ico
+                                position: relative
+                                .arr
+                                    position: absolute
+                                    top: 50%
+                                    translate: 0 -50%
+                                    left: -35%
+                            &:hover
+                                .arr
+                                    left: -10%
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 0
+                    left: 0
+                    bottom: 0
+                    right: 0
+                    pointer-events: none
+                    user-select: none
+                    z-index: 1
+                    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 63%, rgb(0 0 0 / 51%) 77%)
+                    @include respond-to(screen-767)
+                        background: linear-gradient(270deg, rgba(255, 255, 255, 0) 23%, rgba(0, 0, 0, 0.51) 77%)
+.home-secA
+    padding: 20px 0 55px
+    @include respond-to(screen-767)
+        padding: 25px 0 35px
+    .wrap-secA
+        padding: 0 70px
+        @include respond-to(screen-1366)
+            padding: 0 25px
+        @include respond-to(screen-767)
+            padding: 0 15px
+        .heading
+            padding-bottom: 50px
+            @include respond-to(screen-767)
+                padding-bottom: 35px
+            h3
+                text-transform: uppercase
+                padding: 12px 0 5px
+            img
+                margin: 0 auto
+        .counter_sec
+            .flex
+                @include respond-to(screen-1152)
+                    gap: 30px 0
+                .count-info
+                    flex: 0 1 14.28%
+                    max-width: 14.28%
+                    width: 100%
+                    text-align: center
+                    @include respond-to(screen-1152)
+                        flex: 0 1 25%
+                        max-width: 25%
+                    @include respond-to(screen-767)
+                        flex: 0 1 33.33%
+                        max-width: 33.33%
+                        padding: 0 10px
+                    &:last-child
+                        @include respond-to(screen-767)
+                            display: none
+                    h3
+                        font-size: 30px
+                        line-height: 1
+                        font-family: $PoppinsSB
+                        @include respond-to(screen-1366)
+                            font-size: 26px
+                        @include respond-to(screen-767)
+                            font-size: 22px
+                    p
+                        color: $text
+                        line-height: 1.3
+                        max-width: 170px
+                        margin: 0 auto
+                        margin-top: 6px
+                        @include respond-to(screen-520)
+                            font-size: 14px
+                            line-height: 1.2
+.home-secB
+    background: $lightgrey
+    padding: 45px 0 25px
+    @include respond-to(screen-991)
+        padding: 30px 0 25px
+    .wrap-secB
+        padding: 0 35px
+        @include respond-to(screen-991)
+            padding: 0 15px
+        .heading
+            max-width: 425px
+            margin: 0 auto
+            padding-bottom: 30px
+            p
+                margin-top: 6px
+        .col-md
+            .grid
+                grid-template-columns: repeat(2,1fr)
+                grid-gap: 10px
+                @include respond-to(screen-767)
+                    grid-template-columns: 100%
+                .item
+                    &::before
+                        background: linear-gradient(0deg, rgb(0 0 0 / 45%) 22%, rgba(255, 255, 255, 0) 50%)
+                        @include respond-to(screen-991)
+                            background: linear-gradient(0deg, rgb(0 0 0 / 61%) 35%, rgba(255, 255, 255, 0) 59%)
+                    figure
+                        img
+                            width: 100%
+                    .info-md,.title-md
+                        color: $White
+                    .title-md
+                        font-size: 24px
+                        line-height: 1
+                        font-family: $PoppinsM
+                        margin-bottom: 5px
+                        @include respond-to(screen-1024)
+                            font-size: 20px
+                    .info-md
+                        @include respond-to(screen-1024)
+                            font-size: 15px
+                            line-height: 23px
+                    &:hover
+                        figure
+                            img
+                                transform: scale(1.05)
+                        .title-info
+                            .wrap-md
+                                &::before
+                                    height: 100%
+                                .col-2
+                                    .btn-ar
+                                        transform: translateX(0px)
+                                        opacity: 1
+                    .title-info
+                        overflow: hidden
+                        @include respond-to(screen-767)
+                            position: relative
+                        .wrap-md
+                            position: relative
+                            display: flex
+                            flex-wrap: wrap
+                            align-items: center
+                            padding: 30px 40px
+                            @include respond-to(screen-1366)
+                                padding: 22px 20px
+                            @include respond-to(screen-991)
+                                padding: 15px
+                            a
+                                position: absolute
+                                left: 0
+                                right: 0
+                                bottom: 0
+                                top: 0
+                            &::before
+                                content: ""
+                                position: absolute
+                                bottom: 0
+                                left: 0
+                                right: 0
+                                height: 0
+                                z-index: -1
+                                background: $primary
+                                transition: .5s ease
+                                @include respond-to(screen-767)
+                                    height: 100%
+                            .col-1
+                                flex: 1
+                                padding-right: 15px
+                            .col-2
+                                flex: 0 1 max-content
+                                max-width: max-content
+                                width: 100%
+                                .btn-ar
+                                    height: 50px
+                                    width: 50px
+                                    border-radius: 50%
+                                    background: $White
+                                    display: flex
+                                    align-items: center
+                                    justify-content: center
+                                    transform: translateX(calc(40px + 100%))
+                                    opacity: 0
+                                    transition: .5s ease
+                                    @include respond-to(screen-767)
+                                        transform: translateX(0px)
+                                        opacity: 1
+                                        height: 50px
+                                        width: 50px
+                                    img
+                                        @include respond-to(screen-767)
+                                            width: 9px
+.home-secC
+    padding: 70px 0
+    @include respond-to(screen-1152)
+        padding: 55px 0
+    @include respond-to(screen-991)
+        padding: 40px 0
+    @include respond-to(screen-767)
+        padding: 32px 0
+    .heading
+        max-width: 425px
+        margin: 0 auto
+        padding-bottom: 50px
+        p
+            margin-top: 6px
+    .secC-wrap
+        .grid
+            grid-template-columns: repeat(5,max-content)
+            grid-gap: 50px 0
+            justify-content: space-between
+            @include respond-to(screen-1024)
+                grid-template-columns: repeat(5, 1fr)
+                grid-gap: 50px 40px
+            @include respond-to(screen-991)
+                grid-template-columns: repeat(4, 1fr)
+            @include respond-to(screen-767)
+                grid-template-columns: repeat(2, 1fr)
+            .item
+                text-align: center
+                position: relative
+                &:hover
+                    img
+                        transform: scale(1.1) translateY(-5px)
+                    h6
+                        color: $primary
+                a
+                    position: absolute
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    top: 0
+                img
+                    margin: 0 auto
+                h6
+                    max-width: 200px
+                    margin: 0 auto
+                    margin-top: 25px
+                    color: $text
+                    font-family: $PoppinsSB
+                    transition: .3s ease
+.home-secD
+    padding: 25px 0 0
+    .heading
+        max-width: 425px
+        margin: 0 auto
+        padding-bottom: 50px
+        @include respond-to(screen-991)
+            padding-bottom: 40px
+        p
+            margin-top: 8px
+    .secD-wrap
+        padding: 0 70px
+        @include respond-to(screen-1280)
+            padding: 0 35px
+        @include respond-to(screen-991)
+            padding: 0 15px
+        .secD-col-md
+            .grid
+                grid-template-columns: 70% 30%
+                grid-template-rows: 40vh 40vh
+                grid-gap: 15px
+                @include respond-to(screen-1536)
+                    grid-template-rows: 32.5vh 32.5vh
+                @include respond-to(screen-1024)
+                    grid-template-rows: 28vh 28vh
+                @include respond-to(screen-991)
+                    grid-template-columns: 55% 43%
+                    grid-template-rows: 232px 232px
+                @include respond-to(screen-767)
+                    grid-template-columns: 100%
+                    grid-template-rows: auto
+                .item
+                    height: 100%
+                    width: 100%
+                    figure
+                        height: inherit
+                        img
+                            height: 100%
+                            width: 100%
+                            @include respond-to(screen-767)
+                                height: 285px
+                                object-fit: cover
+                    h6
+                        font-family: $PoppinsSB
+                        color: $White
+                    p
+                        color: $White
+                    a.get-quote
+                        font-family: $PoppinsM
+                        color: $White
+                        font-size: 14px
+                        border-bottom: 1px solid $White
+                        display: inline-flex
+                        align-items: center
+                        gap: 0 12px
+                        padding-bottom: 5px
+                        padding-top: 15px
+                    .wrap-2ttl
+                        display: flex
+                        flex-wrap: wrap
+                        align-items: center
+                        .col
+                            flex: 1
+                        img.chr
+                            flex: 0 1 max-content
+                            max-width: max-content
+                            width: 100%
+                    &:hover
+                        figure
+                            img
+                                transform: scale(1.05)
+                    &.item-1
+                        grid-area: span 2/ 1
+                        &::before
+                            background: linear-gradient(0deg, rgb(0 0 0 / 31%) 100%, rgba(255, 255, 255, 0) 0%)
+                        .item-title
+                            bottom: auto
+                            top: 50%
+                            translate: 0 -50%
+                            .video_icon
+                                margin: 0 auto
+                                border-width: 2px
+                                height: 70px
+                                width: 70px
+                                @include respond-to(screen-991)
+                                    width: 60px
+                                    height: 60px
+                                &::before
+                                    height: 65px
+                                    width: 65px
+                                    @include respond-to(screen-991)
+                                        width: 55px
+                                        height: 55px
+                                img
+                                    width: auto
+                                    @include respond-to(screen-991)
+                                        width: 10px
+                    &.item-3
+                        &:hover
+                            a.get-quote
+                                img
+                                    transform: translateX(10px)
+                    &.item-2,&.item-3
+                        &::before
+                            background: linear-gradient(0deg, rgb(0 0 0 / 45%) 32%, rgba(255, 255, 255, 0) 57%)
+                        .item-title
+                            padding: 0 20px 30px
+.home-secE
+    padding: 70px 0 35px
+    @include respond-to(screen-1024)
+        padding: 45px 0 35px
+    .secE-wrap
+        padding: 0 35px
+        @include respond-to(screen-991)
+            padding: 0 15px
+        @include respond-to(screen-767)
+            padding-right: 0
+        .uper-sec
+            position: relative
+            margin-bottom: 50px
+            @include respond-to(screen-991)
+                margin-bottom: 40px
+            @include respond-to(screen-767)
+                padding-right: 15px
+            .heading
+                max-width: 425px
+                margin: 0 auto
+                p
+                    margin-top: 8px
+            .custom-nav
+                position: absolute
+                right: 0
+                bottom: 0
+                display: flex
+                align-items: center
+                gap: 0 15px
+                @include respond-to(screen-767)
+                    display: none
+                button.owl-prev,.owl-next
+                    height: 45px
+                    width: 45px
+                    border: 1px solid $text
+                    background: none
+                    border-radius: 50%
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    cursor: pointer
+                    @include respond-to(screen-991)
+                        height: 40px
+                        width: 40px
+        .fm-product-demo
+            .fm-product-slider
+                .item
+                    &::before
+                        background: linear-gradient(0deg, rgb(0 0 0 / 55%) 25%, rgba(255, 255, 255, 0) 47%)
+                    &:hover
+                        figure
+                            overflow: hidden
+                            img
+                                transform: scale(1.1)
+                        .item-info
+                            h5
+                                transform: scale(1.1) translateY(-10px)
+                            .seeall
+                                color: $primary
+                                transform: scale(1.1)
+                                .arrow
+                                    img
+                                        &.red
+                                            opacity: 1
+                                        &.white
+                                            opacity: 0
+                    .item-info
+                        text-align: center
+                        padding: 0 15px 45px
+                        h5
+                            font-family: $Poppins
+                            color: $White
+                            padding-bottom: 16px
+                            letter-spacing: 1px
+                            text-transform: uppercase
+                            transition: .5s ease
+                            @include respond-to(screen-1024)
+                                font-size: 16px
+                                padding-bottom: 12px
+                                letter-spacing: 0px
+                        .seeall
+                            color: $White
+                            display: inline-flex
+                            align-items: center
+                            gap: 0 12px
+                            font-size: 14px
+                            .arrow
+                                position: relative
+                                img
+                                    &.red
+                                        position: absolute
+                                        left: 0
+                                        right: 0
+                                        bottom: 0
+                                        top: 0
+                                        width: auto
+                                        opacity: 0
+            .shop-btn
+                text-align: center
+                margin-top: 35px
+                a
+                    display: inline-flex
+                    align-items: center
+                    gap: 0 12px
+                    text-transform: uppercase
+                    font-size: 14px
+                    color: $text
+                    font-family: $PoppinsM
+                    &:hover
+                        color: $primary
+                        img
+                            transform: translateX(5px)
+.home-secF
+    background: url(../images/backgrounds/chair-white-big.png), linear-gradient(49deg, rgb(254, 254, 254) 19%, rgb(234, 235, 234) 93%)
+    background-repeat: no-repeat
+    background-position: 100% 70%, 100%
+    .secF-wrap
+        padding: 55px 0
+        @include respond-to(screen-991)
+            padding: 40px 0
+        @include respond-to(screen-767)
+            padding: 30px 15px
+        .heading
+            p
+                color: $text
+                max-width: 425px
+                margin: 0 auto
+                margin-top: 5px
+                line-height: 22px
+        .clients-lg-demo
+            padding-top: 50px
+            max-width: 70%
+            margin-right: auto
+            margin-left: 4rem
+            @include respond-to(screen-1366)
+                max-width: 75%
+            @include respond-to(screen-1140)
+                max-width: 100%
+                margin-left: 0
+                padding: 0 15px
+                margin-top: 40px
+        .clients-lg-slider
+            mix-blend-mode: multiply
+            .owl-stage
+                display: flex
+                .owl-item
+                    height: auto
+            .owl-dots
+                text-align: center
+                padding-top: 35px
+                button.owl-dot
+                    height: 10px
+                    width: 10px
+                    border-radius: 50%
+                    margin-inline: 5px
+                    background: $text
+                    opacity: .3
+                    &.active
+                        background: $primary
+                        opacity: 1
+            .item
+                height: 100%
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                gap: 50px
+                a
+                    display: block
+                    width: 100%
+                    img
+                        width: auto
+                        margin: 0 auto
+                        mix-blend-mode: multiply
+                    &:hover
+                        img
+                            transform: scale(1.05)
+        .btn-all-clt
+            text-align: center
+            padding-top: 30px
+            a
+                display: inline-flex
+                align-items: center
+                justify-content: flex-end
+                gap: 0 12px
+                color: $primary
+                text-transform: uppercase
+                font-size: 14px
+                &:hover
+                    img
+                        transform: translateX(5px)
+.home-secG
+    .flex
+        height: 100%
+        .colA
+            position: relative
+            flex: 0 1 30%
+            max-width: 30%
+            width: 100%
+            background: $primary url(../images/backgrounds/chair-small.png) no-repeat
+            background-position: bottom right
+            background-size: 60%
+            @include respond-to(screen-991)
+                flex: 0 1 35%
+                max-width: 35%
+            @include respond-to(screen-767)
+                flex: 0 1 100%
+                max-width: 100%
+                width: 100%
+                display: flex
+                align-items: center
+                padding: 30px 15px
+                flex-direction: column-reverse
+                justify-content: space-between
+                gap: 20px
+                background-image: none
+            .gallery-tab
+                padding: 50px 0 0
+                @include respond-to(screen-767)
+                    padding: 0
+                    width: 100%
+                ul
+                    text-align: left
+                    max-width: max-content
+                    margin-left: auto
+                    margin-right: 18%
+                    li
+                        display: block
+                        color: $White
+                        position: relative
+                        font-size: 16px
+                        line-height: 30px
+                        font-family: $PoppinsM
+                        opacity: .7
+                        &:not(:first-child)
+                            @include respond-to(screen-767)
+                                margin-left: 15px
+                        @include respond-to(screen-1024)
+                            font-size: 15px
+                            line-height: 28px
+                        @include respond-to(screen-767)
+                            display: inline-block
+                            font-size: 16px
+                            line-height: 1.3
+                            padding-bottom: 5px
+                        &::before
+                            content: ""
+                            position: absolute
+                            left: 0
+                            top: 50%
+                            translate: -112% -50%
+                            width: 0
+                            height: 2px
+                            background: $White
+                            transition: .5s ease
+                            @include respond-to(screen-767)
+                                bottom: 0
+                                top: auto
+                                translate: 0 0
+                        &.active
+                            opacity: 1
+                            &::before
+                                width: 50px
+                                @include respond-to(screen-767)
+                                    width: 100%
+            .heading
+                position: absolute
+                top: 50%
+                translate: 0 -50%
+                right: 18%
+                @include respond-to(screen-1152)
+                    top: 60%
+                @include respond-to(screen-767)
+                    position: unset
+                    translate: 0 0
+                h3
+                    color: $White
+                    font-weight: 100
+                    font-family: $Silver
+                    font-size: 72px
+                    line-height: 0.7
+                    @include respond-to(screen-1152)
+                        font-size: 58px
+                    em
+                        font-size: 48px
+                        line-height: 1.3
+                        display: block
+                        font-family: $Antiga
+                        font-style: inherit
+                        margin-left: 50px
+                        @include respond-to(screen-1152)
+                            font-size: 34px
+        .colB
+            flex: 0 1 70%
+            max-width: 70%
+            width: 100%
+            height: inherit
+            @include respond-to(screen-991)
+                flex: 0 1 65%
+                max-width: 65%
+            @include respond-to(screen-767)
+                flex: 0 1 100%
+                max-width: 100%
+                width: 100%
+            .gallery-tab-content
+                height: inherit
+                overflow: visible
+                .tabs
+                    transition: .2s linear
+                .gallery-slider
+                    .item
+                        img
+                            @include respond-to(screen-991)
+                                height: 400px
+                                object-fit: cover
+                    .owl-nav
+                        position: absolute
+                        left: 0
+                        --btnwidth: 38px
+                        translate: calc( var(--btnwidth) / 2 * -1) 0
+                        bottom: 0
+                        z-index: 99
+                        bottom: 20%
+                        display: flex
+                        flex-direction: column-reverse
+                        gap: 12px
+                        @include respond-to(screen-767)
+                            position: unset
+                            display: initial
+                        button.owl-prev,.owl-next
+                            height: var(--btnwidth)
+                            width: var(--btnwidth)
+                            border-radius: 50%
+                            background: $White
+                            display: grid
+                            place-items: center
+                            @include respond-to(screen-767)
+                                position: absolute
+                                top: 50%
+                                translate: 0 -50%
+                            img
+                                width: 7px
+                        .owl-prev
+                            @include respond-to(screen-767)
+                                left: 10px
+                        .owl-next
+                            @include respond-to(screen-767)
+                                right: 10px
+.home-secH
+    padding: 55px 0
+    @include respond-to(screen-991)
+        padding: 40px 0
+    .heading
+        max-width: 425px
+        margin: 0 auto
+        padding-bottom: 40px
+        @include respond-to(screen-991)
+            padding-bottom: 35px
+        @include respond-to(screen-767)
+            padding: 0 15px
+            padding-bottom: 30px
+    .client-demo
+        padding: 0 15px
+        @include respond-to(screen-767)
+            padding-right: 0
+        .custom-client-nav
+            display: flex
+            justify-content: center
+            align-items: center
+            gap: 0 15px
+            padding-top: 30px
+            @include respond-to(screen-1024)
+                display: none
+            button.owl-prev,.owl-next
+                height: 45px
+                width: 45px
+                border: 1px solid $text
+                background: none
+                border-radius: 50%
+                display: flex
+                align-items: center
+                justify-content: center
+                cursor: pointer
+            .nmber
+                em
+                    font-size: 18px
+                    line-height: 1
+                    font-style: normal
+                span
+                    em
+                        font-family: $PoppinsSB
+                p
+                    display: inline-block
+                    em
+                        font-family: $Poppins
+                        color: $text
+        .client-slider
+            .owl-dots
+                @include respond-to(screen-1024)
+                    text-align: center
+                    margin-top: 20px
+                button.owl-dot
+                    @include respond-to(screen-1024)
+                        height: 9px
+                        width: 9px
+                        border-radius: 50%
+                        background: $text
+                        opacity: .6
+                        margin-inline: 5px
+                    &.active
+                        background: $primary
+                        opacity: 1
+            .col
+                .flex
+                    flex-direction: column
+                    gap: 12px
+                    .item
+                        width: 100%
+                        &::before
+                            background: linear-gradient(180deg, rgba(254, 254, 254, 0) 48%, rgba(0, 0, 0, 0.3925945378) 76%)
+                        .item-info
+                            padding: 0 22px 30px
+                            @include respond-to(screen-767)
+                                padding: 0 15px 20px
+                            .info-wrap
+                                display: flex
+                                flex-wrap: wrap
+                                align-items: center
+                                .col-md
+                                    flex: 1
+                                    display: flex
+                                    flex-wrap: wrap
+                                    align-items: center
+                                    gap: 0 18px
+                                    .video_icon
+                                        flex: 0 1 auto
+                                        width: 45px
+                                        height: 45px
+                                        border-width: 2px
+                                        @include respond-to(screen-420)
+                                            width: 40px
+                                            height: 40px
+                                            border-width: 1px
+                                        &::before
+                                            height: 40px
+                                            width: 40px
+                                        img
+                                            width: auto
+                                    .ttl-wrap
+                                        flex: 1
+                                        padding-right: 20px
+                                        .name,.desg
+                                            color: $White
+                                            line-height: 1.4
+                                        .name
+                                            font-family: $PoppinsSB
+                                            @include respond-to(screen-420)
+                                                font-size: 14px
+                                        .desg
+                                            font-size: 14px
+                                            font-family: $Poppins
+                                            @include respond-to(screen-420)
+                                                font-size: 13px
+                                .logo-ing
+                                    flex: 0 1 auto
+                                    img
+                                        width: auto
+.home-SecI
+    background: url(../images/home/secB-bg.jpg) no-repeat
+    background-attachment: fixed
+    background-size: cover
+    position: relative
+    height: calc( 100vh - $headerheight )
+    @include respond-to(screen-1152)
+        height: 65vh
+    @include respond-to(screen-991)
+        height: 460px
+    &::before,&::after
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        pointer-events: none
+        user-select: none
+    &::before
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0) 30%, rgb(3 3 4 / 68%) 93%)
+    &::after
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 31%, rgb(3 3 4 / 69%) 93%)
+    .container,.secB-wrap
+        height: 100%
+    .secI-wrap
+        position: absolute
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+        z-index: 1
+        @include respond-to(screen-675)
+            left: 0
+            right: 0
+            translate: 0% -50%
+            padding: 0 15px
+    .heading
+        h3
+            @include respond-to(screen-767)
+                margin-bottom: 15px
+        h3,p
+            color: $White
+        p
+            max-width: 470px
+            margin: 0 auto
+    .video_icon
+        margin: 50px auto 70px
+        height: 66px
+        width: 66px
+        border-width: 2px
+        @include respond-to(screen-767)
+            height: 55px
+            width: 55px
+            margin: 30px auto 30px
+        &::before
+            height: 60px
+            width: 60px
+            @include respond-to(screen-767)
+                height: 50px
+                width: 50px
+        img
+            width: 13px
+            @include respond-to(screen-767)
+                width: 9px
+    .abt-btn
+        a
+            display: inline-block
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 0 12px
+            font-family: $PoppinsM
+            color: $White
+            &:hover
+                img
+                    transform: translateX(5px)
+.home-secJ
+    background: #fff url(../images/backgrounds/chair-light-grey.png) no-repeat
+    background-position: 100% 70%
+    padding: 55px 0 75px
+    @include respond-to(screen-991)
+        padding: 40px 0 35px
+    @include respond-to(screen-767)
+        padding-bottom: 0
+    .content
+        h4
+            font-family: $Poppins
+            margin-bottom: 15px
+            @include respond-to(screen-767)
+                font-size: 20px
+                font-family: $PoppinsM
+        p
+            text-align: justify
+            color: $text
+            margin-bottom: 20px
+            @include respond-to(screen-767)
+                margin-bottom: 24px
+.home-secK
+    position: relative
+    .bg
+        height: calc( 100vh - $headerheight )
+        @include respond-to(screen-1024)
+            height: 550px
+        @include respond-to(screen-991)
+            height: 460px
+        @include respond-to(screen-767)
+            display: none
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+    .secK-wrapper
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        @include respond-to(screen-767)
+            position: unset
+        .secK-content
+            max-width: 542px
+            margin-left: auto
+            margin-right: 0
+            @include respond-to(screen-991)
+                max-width: 470px
+            .card
+                background: $White url(../images/backgrounds/chair-light-grey.png) no-repeat
+                padding: 50px 55px
+                border-radius: 15px
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px
+                background-position: 100% 100%
+                background-size: 50%
+                transform: translate(35px, 50px)
+                @include respond-to(screen-1366)
+                    padding: 45px 50px
+                    transform: translate(0px, 50px)
+                @include respond-to(screen-991)
+                    padding: 30px
+                @include respond-to(screen-767)
+                    padding: 0
+                    box-shadow: none
+                    transform: translate(0, 0)
+                h4
+                    font-family: $Poppins
+                    margin-bottom: 20px
+                    @include respond-to(screen-767)
+                        font-family: $PoppinsM
+                        font-size: 20px
+                        margin-bottom: 15px
+                p
+                    margin-bottom: 18px
+                    color: $text
+                    @include respond-to(screen-991)
+                        margin-bottom: 10px
+                        font-size: 14px
+                        line-height: 22px
+                    @include respond-to(screen-767)
+                        font-size: 16px
+                        line-height: 24px
+                        text-align: justify
+                        margin-bottom: 24px
+
+.home-secJ
+    &.home-secL
+        padding: 85px 0 40px
+        background: none
+        @include respond-to(screen-991)
+            padding: 80px 0 25px
+        @include respond-to(screen-991)
+            padding: 0px 0 15px
